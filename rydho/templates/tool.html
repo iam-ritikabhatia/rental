@@ -1,0 +1,1145 @@
+<!-- Tool Hero Header -->
+<section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, rgba(241, 18, 135, 0.05) 0%, rgba(17, 17, 17, 0.02) 100%); border-bottom: 1px solid var(--border-color);">
+  <div class="container" style="text-align: center; max-width: 800px;">
+    <span class="badge">RYDHO Free Utilities</span>
+    <h1>{{toolTitle}}</h1>
+    <p style="color: var(--text-gray); font-size: 1.1rem; margin-top: 12px; margin-bottom: 24px;">{{toolSubtitle}}</p>
+    
+    <!-- Switcher Dropdown -->
+    <div style="max-width: 360px; margin: 0 auto;">
+      <select onchange="if(this.value) window.location.href='/tools/' + this.value + '.html'" style="width: 100%; padding: 12px 16px; border-radius: 30px; border: 1.5px solid var(--primary); background: #fff; font-weight: 600; color: var(--secondary); outline: none; cursor: pointer; box-shadow: var(--shadow-sm); text-align-last: center;">
+        <option value="">⚙️ Switch to Another Calculator</option>
+        <option value="used-bike-resale-value-calculator">Used Bike Resale Value Calculator</option>
+        <option value="bike-mileage-fuel-cost-calculator">Bike Mileage & Fuel Cost Calculator</option>
+        <option value="traffic-police-challan-consultant">Traffic Police Challan Advisor</option>
+        <option value="battery-replacement-cost-calculator">Battery Replacement Cost Calculator</option>
+        <option value="tire-replacement-cost-calculator">Tire Replacement Cost Calculator</option>
+        <option value="helmet-size-calculator">Helmet Size Calculator</option>
+        <option value="insurance-idv-calculator">Insurance IDV Calculator</option>
+        <option value="loan-prepayment-calculator">Loan Prepayment Calculator</option>
+        <option value="riding-cost-per-km-calculator">Riding Cost Per Km Calculator</option>
+        <option value="electric-charging-cost-calculator">Electric Charging Cost Calculator</option>
+        <option value="home-charging-time-calculator">Home Charging Time Calculator</option>
+        <option value="range-estimator-for-evs">Range Estimator for EVs</option>
+        <option value="monthly-commuting-cost-calculator">Monthly Commuting Cost Calculator</option>
+        <option value="bike-affordability-calculator">Bike Affordability Calculator</option>
+        <option value="rto-fee-estimator">RTO Fee Estimator</option>
+        <option value="registration-cost-calculator">Registration Cost Calculator</option>
+        <option value="puc-renewal-reminder-calculator">PUC Renewal Reminder Calculator</option>
+        <option value="carbon-emission-calculator">Carbon Emission Calculator</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- Calculator Widget Container -->
+<section class="section-padding" style="background-color: var(--bg-white);">
+  <div class="container" style="max-width: 900px;">
+    
+    {{#if_eq toolSlug "used-bike-resale-value-calculator"}}
+    <!-- Resale Value Calculator Widget -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-scale-balanced text-primary"></i> Indian Bike Resale Valuation Engine</h3>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;" class="hero-grid">
+        <div class="form-group">
+          <label>Select Two-Wheeler Model</label>
+          <select id="resale-model" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="activa">Honda Activa (Scooter)</option>
+            <option value="classic">Royal Enfield Classic 350 (Cruiser)</option>
+            <option value="pulsar">Bajaj Pulsar 150 (Commuter)</option>
+            <option value="jupiter">TVS Jupiter (Scooter)</option>
+            <option value="fzs">Yamaha FZ-S (Commuter)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Year of Registration</label>
+          <select id="resale-year" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="2025">2025 (1 Year Old)</option>
+            <option value="2024">2024 (2 Years Old)</option>
+            <option value="2023">2023 (3 Years Old)</option>
+            <option value="2022">2022 (4 Years Old)</option>
+            <option value="2021">2021 (5+ Years Old)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Total Kilometers Driven</label>
+          <input type="number" id="resale-kms" value="15000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        
+        <div class="form-group">
+          <label>Vehicle Physical Condition</label>
+          <select id="resale-condition" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="excellent">Excellent (Scratchless, fully serviced)</option>
+            <option value="good">Good (Minor wear, well maintained)</option>
+            <option value="fair">Fair (Visible scratches, needs service)</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="calculateResale()" class="btn btn-primary" style="width: 100%; margin-top: 24px; padding:14px;">Calculate Resale Value</button>
+      
+      <div id="resale-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Market Resale Value</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="resale-valuation-range">₹45,000 - ₹48,000</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 16px;">*Based on current RTO depreciation charts in India</p>
+        
+        <div style="background-color: var(--bg-white); padding: 16px; border-radius: 8px; border:1px solid var(--border-color);">
+          <strong style="color:var(--secondary); display:block; margin-bottom:6px;">💡 Don't sell at a heavy loss!</strong>
+          <span style="font-size: 0.85rem; color:var(--text-gray);">List your vehicle as a RYDHO host and earn up to <strong>₹12,000 monthly</strong>. You recover the vehicle's entire purchase cost in under a year!</span>
+          <a href="/become-a-host.html" class="btn btn-primary" style="margin-top: 12px; font-size: 0.8rem; padding: 8px 16px;">Calculate Host Earnings</a>
+        </div>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "bike-mileage-fuel-cost-calculator"}}
+    <!-- Mileage / Average Cost Calculator Widget -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-gas-pump text-primary"></i> Two-Wheeler Fuel Mileage & Expense Calculator</h3>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Select Two-Wheeler Brand</label>
+          <select id="mileage-brand" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);" onchange="updateEstimatedAvg()">
+            <option value="hero">Hero MotoCorp (Splendor, Passion, HF Deluxe)</option>
+            <option value="honda" selected>Honda (Activa, Shine, Unicorn)</option>
+            <option value="tvs">TVS (Jupiter, Apache, Ntorq)</option>
+            <option value="bajaj">Bajaj Auto (Pulsar, Platina, Avenger)</option>
+            <option value="yamaha">Yamaha (FZ, R15, Fascino)</option>
+            <option value="re">Royal Enfield (Classic 350, Bullet, Himalayan)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Vehicle Age</label>
+          <select id="mileage-age" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);" onchange="updateEstimatedAvg()">
+            <option value="new">Brand New (Under 1 Year)</option>
+            <option value="mid">1 - 2 Years Old</option>
+            <option value="old">2 - 4 Years Old</option>
+            <option value="veryold">5+ Years Old (High wear & tear)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;" class="hero-grid">
+        <div class="form-group">
+          <label>Daily Commuting Distance (Km)</label>
+          <input type="number" id="mileage-distance" value="30" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        
+        <div class="form-group">
+          <label>Current Petrol Price (₹/Liter)</label>
+          <input type="number" id="mileage-price" value="106" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Estimated Fuel Average (Kmpl)</label>
+          <input type="number" id="mileage-avg" value="50" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color); background-color:#eaebee;" readonly>
+          <span style="font-size:0.75rem; color:var(--text-gray); margin-top:2px;">*Calculated based on brand and age</span>
+        </div>
+        
+        <div class="form-group">
+          <label>Days Commuted in a Month</label>
+          <input type="number" id="mileage-days" value="22" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+
+      <button onclick="calculateMileage()" class="btn btn-primary" style="width: 100%; margin-top: 24px; padding:14px;">Calculate Fuel Expense</button>
+      
+      <div id="mileage-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Your Estimated Monthly Fuel Expense</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="mileage-cost">₹1,555</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 16px;" id="mileage-liters">Equivalent to buying 15 liters of petrol</p>
+        
+        <div style="background-color: var(--bg-white); padding: 16px; border-radius: 8px; border:1px solid var(--border-color);">
+          <strong style="color:var(--secondary); display:block; margin-bottom:6px;">📈 Skip Ownership Depreciation & Save!</strong>
+          <span style="font-size: 0.85rem; color:var(--text-gray);">Older bikes lose up to 30% of fuel economy and require constant repairs. Rent a fresh, certified, high-mileage scooter on RYDHO starting at only ₹299/day!</span>
+          <a href="/scooter-rental.html" class="btn btn-primary" style="margin-top: 12px; font-size: 0.8rem; padding: 8px 16px;">View High-Mileage Scooters</a>
+        </div>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "traffic-police-challan-consultant"}}
+    <!-- Traffic Challan Advisor Widget -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-building-shield text-primary"></i> Indian Traffic Police Challan Consultant</h3>
+      
+      <div class="form-group">
+        <label>Select Traffic Offense Type</label>
+        <select id="challan-offense" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);" onchange="updateChallanAdvisor()">
+          <option value="helmet">Riding without helmet (Section 194D)</option>
+          <option value="license">Driving without license (Section 181)</option>
+          <option value="speeding">Over-speeding (Section 183)</option>
+          <option value="triple">Triple riding on two-wheeler (Section 194C)</option>
+          <option value="insurance">Driving without insurance (Section 196)</option>
+        </select>
+      </div>
+
+      <div style="margin-top: 24px; padding: 24px; background-color: var(--bg-white); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+        <h4 style="color: var(--primary); font-size:1.1rem; margin-bottom:12px;" id="challan-fine-title">Fine: ₹1,000 + 3 Months License Suspension</h4>
+        <div style="font-size: 0.95rem; color: var(--text-gray); line-height: 1.6;" id="challan-fine-desc">
+          Under Section 194D of the Motor Vehicles Act, riding without a helmet attracts a penalty fine of ₹1,000. Additionally, the traffic police can suspend your Driving License (DL) for a period of up to 3 months.
+        </div>
+        
+        <div style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 16px;">
+          <strong style="color: var(--secondary); display:block; margin-bottom:6px;">⚖️ Consultant Legal Advice:</strong>
+          <ul style="padding-left: 20px; font-size:0.85rem; color: var(--text-gray); display:flex; flex-direction:column; gap:8px;">
+            <li>Always check the name, designation, and ID number of the traffic officer.</li>
+            <li>If issued a wrong e-challan, contest it on the official Virtual Court portal (courts.gov.in) with photo evidence.</li>
+            <li>Do not hand over physical documents unless requested by an officer of Assistant Sub-Inspector (ASI) rank or above. You can show digitised copies on Digilocker or mParivahan.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="margin-top: 24px; background-color: var(--primary-glow); border: 1px solid var(--primary); padding: 20px; border-radius: 8px; text-align: center;">
+        <strong style="color: var(--secondary); display:block; margin-bottom:4px;">🛡️ Avoid Traffic Fines with RYDHO!</strong>
+        <span style="font-size: 0.85rem; color: var(--text-gray); display:block; margin-bottom:12px;">We provide <strong>clean, sanitized, RTO-approved helmets</strong> with every booking and maintain fully updated PUC, registration, and active insurance certificates.</span>
+        <a href="https://app.rydho.com/search" class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">Book a Legal Ride Now</a>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "battery-replacement-cost-calculator"}}
+    <!-- Battery Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-car-battery text-primary"></i> Battery Replacement Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Select Two-Wheeler Type</label>
+          <select id="battery-vehicle-type" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="scooter-110">Scooter 100cc-110cc (e.g. Activa, Jupiter)</option>
+            <option value="scooter-125">Scooter 125cc (e.g. Access, Ntorq)</option>
+            <option value="bike-commute">Commuter Bike (e.g. Splendor, Pulsar)</option>
+            <option value="bike-cruiser">Cruiser / Premium Bike (e.g. Royal Enfield)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Battery Brand Preference</label>
+          <select id="battery-brand" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="exide">Exide (Premium warranty)</option>
+            <option value="amaron">Amaron (Long life)</option>
+            <option value="tata">Tata Green (Economy)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateBatteryCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Replacement Price</button>
+      <div id="battery-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Out-of-Pocket Cost</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="battery-est-cost">₹1,450</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="battery-details">*Includes ₹150 scrap discount for your old battery</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "tire-replacement-cost-calculator"}}
+    <!-- Tire Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-circle-nodes text-primary"></i> Tire Replacement Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Tyre Position</label>
+          <select id="tire-position" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="front">Front Tyre Only</option>
+            <option value="rear">Rear Tyre Only (Heavier wear)</option>
+            <option value="both">Both Tyres (Set replacement)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Vehicle Category</label>
+          <select id="tire-vehicle" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="scooter">Gearless Scooter (e.g. Activa, 90/90-10)</option>
+            <option value="commuter">Commuter Bike (e.g. Splendor, Pulsar)</option>
+            <option value="cruiser">Cruiser / Heavy (e.g. Royal Enfield Bullet)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateTireCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Tire Price</button>
+      <div id="tire-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Tyre Replacement Invoice</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="tire-est-cost">₹1,350</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="tire-details">*Includes fitment and wheel balance fees</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "helmet-size-calculator"}}
+    <!-- Helmet Size Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-helmet-safety text-primary"></i> Helmet Size Finder</h3>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label>Head Circumference (Measure around forehead in cm)</label>
+        <input type="number" id="helmet-size-cm" value="58" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+      </div>
+      <button onclick="calculateHelmetSize()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Find Helmet Fit</button>
+      <div id="helmet-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Your Recommended Helmet Size</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="helmet-est-size">M (Medium)</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*Fits head sizes between 57-58 cm snuggly for safety</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "insurance-idv-calculator"}}
+    <!-- Insurance IDV Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-shield text-primary"></i> Insured Declared Value (IDV) Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Vehicle Ex-Showroom Price (₹)</label>
+          <input type="number" id="idv-price" value="85000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Age of Vehicle</label>
+          <select id="idv-age" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="0.05">Under 6 Months (5% depreciation)</option>
+            <option value="0.15">6 to 12 Months (15% depreciation)</option>
+            <option value="0.20">1 to 2 Years Old (20% depreciation)</option>
+            <option value="0.30">2 to 3 Years Old (30% depreciation)</option>
+            <option value="0.40">3 to 4 Years Old (40% depreciation)</option>
+            <option value="0.50">4 to 5 Years Old (50% depreciation)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateIDV()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate IDV Valuation</button>
+      <div id="idv-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Insured Declared Value (IDV)</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="idv-est-value">₹68,000</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*This is the maximum insurance sum assured for claims</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "loan-prepayment-calculator"}}
+    <!-- Loan Prepayment Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-coins text-primary"></i> Bike Loan Prepayment Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom:16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Outstanding Loan Principal (₹)</label>
+          <input type="number" id="prepay-principal" value="60000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Interest Rate (% Annual)</label>
+          <input type="number" id="prepay-rate" value="12" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Current EMI (₹/Month)</label>
+          <input type="number" id="prepay-emi" value="2800" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Prepayment Amount (One-time ₹)</label>
+          <input type="number" id="prepay-amount" value="15000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+      <button onclick="calculatePrepayment()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Savings</button>
+      <div id="prepay-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Total Interest Saved</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="prepay-est-savings">₹4,200</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="prepay-tenure-savings">Tenure reduced by approx 6 months</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "riding-cost-per-km-calculator"}}
+    <!-- Riding Cost Per Km Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-route text-primary"></i> Two-Wheeler Running Cost Per Km</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Bike Fuel Average (Kmpl)</label>
+          <input type="number" id="run-avg" value="45" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Petrol Cost (₹/Liter)</label>
+          <input type="number" id="run-petrol" value="106" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+      <button onclick="calculateRunningCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Running Cost</button>
+      <div id="run-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Total Cost Per Kilometer</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="run-est-cost">₹2.65 / km</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*Includes ₹0.30/km baseline maintenance and tire wear allowance</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "electric-charging-cost-calculator"}}
+    <!-- Electric Charging Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-plug text-primary"></i> EV Charging Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Battery Capacity (kWh)</label>
+          <input type="number" id="charge-capacity" value="3.4" step="0.1" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Charging Location Type</label>
+          <select id="charge-type" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="7">Home Residential (₹7/unit)</option>
+            <option value="12">Public AC Slow (₹12/unit)</option>
+            <option value="20">Public DC Fast (₹20/unit)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateChargingCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate Charge Cost</button>
+      <div id="charge-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Cost for 100% Full Charge</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="charge-est-cost">₹23.80</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">Equivalent to approx 1/4 liter of petrol</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "home-charging-time-calculator"}}
+    <!-- Home Charging Time Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-hourglass-half text-primary"></i> Home Charging Time Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Battery Size (kWh)</label>
+          <input type="number" id="time-capacity" value="3.4" step="0.1" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Charger Power Output (kW)</label>
+          <select id="time-charger" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="0.75">Standard Portable Charger (750W)</option>
+            <option value="1.5">Upgraded Home Charger (1.5 kW)</option>
+            <option value="3.3">Wallbox AC Charger (3.3 kW)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateChargingTime()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate Charge Duration</button>
+      <div id="time-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Full Charging Time (0-100%)</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="time-est-hours">4.5 Hours</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*Includes 10% thermal protection trickle charge adjustment</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "range-estimator-for-evs"}}
+    <!-- EV Range Estimator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-bolt text-primary"></i> EV Real-World Range Estimator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Battery Capacity (kWh)</label>
+          <input type="number" id="range-capacity" value="3.4" step="0.1" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Riding Mode</label>
+          <select id="range-mode" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="eco">Eco Mode (Optimized range)</option>
+            <option value="normal">Normal Mode (Balanced)</option>
+            <option value="sports">Sports/Hyper Mode (Heavy power draw)</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Rider & Pillion Load</label>
+          <select id="range-load" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="single">Single Rider (Under 80 kg)</option>
+            <option value="double">Double Seat (Rider + Pillion, ~150 kg)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Terrain Slope</label>
+          <select id="range-terrain" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="flat">Flat Highway / City Roads</option>
+            <option value="hilly">Hilly Terrain (e.g. Ghat road climb)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateEVRange()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate Range</button>
+      <div id="range-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated True Driving Range</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="range-est-km">112 Km</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*Based on standard ambient temperature conditions</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "monthly-commuting-cost-calculator"}}
+    <!-- Monthly Commuting Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-wallet text-primary"></i> Monthly Commuting Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Daily Commuting Distance (Km)</label>
+          <input type="number" id="commute-distance" value="30" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Current Mode of Commute</label>
+          <select id="commute-mode" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="cab">On-Demand Cab (₹22/km)</option>
+            <option value="auto">Auto-Rickshaw (₹15/km)</option>
+            <option value="personal">Own Petrol Bike (₹4.5/km incl. dep/maint)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateCommutingCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Compare Expenses</button>
+      <div id="commute-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Your Monthly Commuting Cost</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="commute-est-cost">₹14,520</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="commute-savings-tip">*By renting a RYDHO scooter at ₹5,980/month, you save over ₹8,000!</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "bike-affordability-calculator"}}
+    <!-- Bike Affordability Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-calculator text-primary"></i> Bike Affordability Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Monthly Take-Home Salary (₹)</label>
+          <input type="number" id="afford-salary" value="45000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Existing Monthly EMIs (₹)</label>
+          <input type="number" id="afford-emi" value="2000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+      </div>
+      <button onclick="calculateAffordability()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Find Affordable Price</button>
+      <div id="afford-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Maximum Affordable Bike Budget</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="afford-budget">₹1,10,000</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="afford-emi-limit">*Recommended max EMI: ₹4,500/month (10% limit)</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "rto-fee-estimator"}}
+    <!-- RTO Fee Estimator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-landmark text-primary"></i> RTO Service Fee Estimator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Select State</label>
+          <select id="rto-state" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="MH">Maharashtra (Pune, Mumbai)</option>
+            <option value="KA">Karnataka (Bangalore)</option>
+            <option value="DL">Delhi</option>
+            <option value="GA">Goa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Service Requested</label>
+          <select id="rto-service" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="transfer">Ownership Transfer (RC Transfer)</option>
+            <option value="noc">Inter-State NOC</option>
+            <option value="hp">Hypothecation Removal (HP Terminate)</option>
+            <option value="duplicate">Duplicate RC</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="estimateRTOFees()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate Government Fees</button>
+      <div id="rto-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Government Portal Processing Fee</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="rto-est-fee">₹150</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="rto-checklist">*Excludes local smartcard mailing speedpost charge of ₹50</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "registration-cost-calculator"}}
+    <!-- Registration Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-file-invoice text-primary"></i> New Vehicle Registration Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Ex-Showroom Price (₹)</label>
+          <input type="number" id="reg-price" value="95000" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>State of Purchase</label>
+          <select id="reg-state" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="0.11">Maharashtra (11% Road Tax)</option>
+            <option value="0.12">Karnataka (12% Road Tax)</option>
+            <option value="0.08">Delhi (8% Road Tax)</option>
+            <option value="0.09">Goa (9% Road Tax)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label>Engine / Power Type</label>
+        <select id="reg-type" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+          <option value="petrol">Petrol Engine (Standard tax)</option>
+          <option value="electric">Electric / EV (0% Road Tax Subsidy in most states)</option>
+        </select>
+      </div>
+      <button onclick="calculateRegistrationCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Registration Costs</button>
+      <div id="reg-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Registration & Road Tax Invoice</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="reg-est-cost">₹11,150</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;">*Includes HSRP number plate and green tax charges</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "puc-renewal-reminder-calculator"}}
+    <!-- PUC Renewal Reminder Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-leaf text-primary"></i> PUC Renewal & Expiry Lookup</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Vehicle Compliance Standard</label>
+          <select id="puc-standard" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="bs6">BS6 Compliant (Registered post-2020)</option>
+            <option value="bs4">BS4 / BS3 Compliant</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Is Vehicle Brand New?</label>
+          <select id="puc-new" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="no">Older than 1 Year</option>
+            <option value="yes">Under 1 Year from showroom date</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="checkPUCValidity()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Check PUC Expiry</button>
+      <div id="puc-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Your PUC Certificate Validity</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="puc-est-validity">12 Months (1 Year)</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="puc-penalty">*Expired PUC attracts a traffic fine of up to ₹10,000 under MV Act section 190(2)</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq toolSlug "carbon-emission-calculator"}}
+    <!-- Carbon Emission Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-tree text-primary"></i> Travel Carbon Footprint & Offsets</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Monthly Riding Distance (Km)</label>
+          <input type="number" id="co2-distance" value="800" style="padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+        </div>
+        <div class="form-group">
+          <label>Engine / Power Category</label>
+          <select id="co2-vehicle" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="scooter">Scooter / Commuter (100-125cc)</option>
+            <option value="cruiser">Cruiser / Heavy bike (350cc+)</option>
+            <option value="ev">Electric Scooter (EV zero direct tailpipe)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateCarbonFootprint()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Estimate Carbon Footprint</button>
+      <div id="co2-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated CO₂ Greenhouse Gas Emitted</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="co2-est-weight">32.8 kg CO₂ / Month</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="co2-offset-trees">Requires planting 2 mature trees to offset monthly emissions</p>
+      </div>
+    </div>
+    {{/if_eq}}
+
+    </div>
+</section>
+
+<!-- SEO Content Guide -->
+<section class="section-padding" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color);">
+  <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--text-dark);">
+    {{{toolContent}}}
+  </div>
+</section>
+
+<!-- Interactive logic scripts for calculators -->
+<script>
+  // 1. Resale Value Calculator
+  function calculateResale() {
+    const model = document.getElementById("resale-model").value;
+    const year = parseInt(document.getElementById("resale-year").value);
+    const kms = parseInt(document.getElementById("resale-kms").value) || 0;
+    const cond = document.getElementById("resale-condition").value;
+    const resultBox = document.getElementById("resale-result");
+    const valRange = document.getElementById("resale-valuation-range");
+
+    if (!resultBox || !valRange) return;
+
+    let baseVal = 85000; // Activa original
+    if (model === "classic") baseVal = 220000;
+    else if (model === "pulsar") baseVal = 130000;
+    else if (model === "jupiter") baseVal = 80000;
+    else if (model === "fzs") baseVal = 125000;
+
+    // Year depreciation factor
+    const age = 2026 - year;
+    let depRate = 0.15; // 1 year
+    if (age === 2) depRate = 0.28;
+    else if (age === 3) depRate = 0.40;
+    else if (age === 4) depRate = 0.50;
+    else if (age >= 5) depRate = 0.60;
+
+    let depreciatedVal = baseVal * (1 - depRate);
+
+    // Kms impact
+    let kmsDep = 0;
+    if (kms > 30000) kmsDep = 0.12;
+    else if (kms > 15000) kmsDep = 0.06;
+    depreciatedVal = depreciatedVal * (1 - kmsDep);
+
+    // Condition adjustment
+    let condFactor = 1.0;
+    if (cond === "excellent") condFactor = 1.05;
+    else if (cond === "fair") condFactor = 0.90;
+    depreciatedVal = Math.round(depreciatedVal * condFactor);
+
+    // Range output
+    const low = Math.round(depreciatedVal * 0.95);
+    const high = Math.round(depreciatedVal * 1.05);
+
+    valRange.innerText = "₹" + low.toLocaleString("en-IN") + " - ₹" + high.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    
+    // Scroll to results smoothly
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 2. Mileage Calculator brand- and age-based logic
+  function updateEstimatedAvg() {
+    const brand = document.getElementById("mileage-brand")?.value || "honda";
+    const age = document.getElementById("mileage-age")?.value || "new";
+    const avgInput = document.getElementById("mileage-avg");
+    if (!avgInput) return;
+
+    // Base Brand Mileage averages in India
+    let base = 50; // Honda default (Activa)
+    if (brand === "hero") base = 65; // Splendor economy
+    else if (brand === "tvs") base = 48; // Jupiter/Apache mix
+    else if (brand === "bajaj") base = 52; // Platina/Pulsar mix
+    else if (brand === "yamaha") base = 45; // FZ/R15
+    else if (brand === "re") base = 35; // Royal Enfield cruiser
+
+    // Age depreciation penalty
+    let penalty = 1.0;
+    if (age === "mid") penalty = 0.92;
+    else if (age === "old") penalty = 0.85;
+    else if (age === "veryold") penalty = 0.76;
+
+    const finalAvg = Math.round(base * penalty);
+    avgInput.value = finalAvg;
+  }
+
+  // Trigger initial average set on load
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("mileage-brand")) {
+      updateEstimatedAvg();
+    }
+  });
+
+  function calculateMileage() {
+    const dist = parseFloat(document.getElementById("mileage-distance").value) || 0;
+    const price = parseFloat(document.getElementById("mileage-price").value) || 0;
+    const avg = parseFloat(document.getElementById("mileage-avg").value) || 1;
+    const days = parseInt(document.getElementById("mileage-days").value) || 0;
+    const resultBox = document.getElementById("mileage-result");
+    const costText = document.getElementById("mileage-cost");
+    const litersText = document.getElementById("mileage-liters");
+
+    if (!resultBox || !costText) return;
+
+    // Monthly distance = daily distance * days
+    const totalDist = dist * days;
+    // Monthly fuel needed = total distance / mileage
+    const fuelNeeded = totalDist / avg;
+    // Monthly cost = fuel needed * petrol price
+    const totalCost = Math.round(fuelNeeded * price);
+
+    costText.innerText = "₹" + totalCost.toLocaleString("en-IN");
+    if (litersText) {
+      litersText.innerText = "Consuming approx " + Math.round(fuelNeeded) + " liters of petrol monthly (" + totalDist + " km total distance)";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 3. Traffic Challan Advisor
+  function updateChallanAdvisor() {
+    const offense = document.getElementById("challan-offense").value;
+    const titleEl = document.getElementById("challan-fine-title");
+    const descEl = document.getElementById("challan-fine-desc");
+
+    if (!titleEl || !descEl) return;
+
+    const data = {
+      helmet: {
+        title: "Fine: ₹1,000 + 3 Months License Suspension",
+        desc: "Under Section 194D of the Motor Vehicles Act, riding a two-wheeler without a protective headgear helmet attracts a fine of ₹1,000. Additionally, traffic authorities have the power to suspend or disqualify your Driving License (DL) for a period of 3 months."
+      },
+      license: {
+        title: "Fine: ₹5,000 + Potential Imprisonment",
+        desc: "Under Section 181 of the Motor Vehicles Act, driving/riding a vehicle without possessing a valid driving license is a serious offense. It attracts a heavy court challan penalty fine of ₹5,000, and/or community service, or imprisonment of up to 3 months."
+      },
+      speeding: {
+        title: "Fine: ₹1,000 to ₹2,000 (Light Motor Vehicle)",
+        desc: "Under Section 183 of the Act, over-speeding two-wheelers are subject to fine penalties. First-time offenses attract a fine between ₹1,000 and ₹2,000. Subsequent violations can lead to suspension of license."
+      },
+      triple: {
+        title: "Fine: ₹1,000 + License Suspension",
+        desc: "Under Section 194C of the Motor Vehicles Act, carrying more than one pillion rider (triple seat) on a two-wheeler is highly prohibited. It attracts a fine of ₹1,000 and a 3-month driving license suspension."
+      },
+      insurance: {
+        title: "Fine: ₹2,000 and/or Up to 3 Months Prison",
+        desc: "Under Section 196 of the Act, driving an uninsured vehicle (without third-party liability coverage) attracts a penalty fine of ₹2,000 for the first offense and/or imprisonment of up to 3 months."
+      }
+    };
+
+      if (data[offense]) {
+        titleEl.innerText = data[offense].title;
+        descEl.innerText = data[offense].desc;
+      }
+    }
+
+  // 4. Battery Cost Calculator
+  function calculateBatteryCost() {
+    const type = document.getElementById("battery-vehicle-type").value;
+    const brand = document.getElementById("battery-brand").value;
+    const resultBox = document.getElementById("battery-result");
+    const costEl = document.getElementById("battery-est-cost");
+    const detailsEl = document.getElementById("battery-details");
+    if (!resultBox || !costEl) return;
+
+    let base = 1600;
+    if (type === "scooter-125") base = 1850;
+    else if (type === "bike-commute") base = 1500;
+    else if (type === "bike-cruiser") base = 3200;
+
+    let brandMult = 1.0;
+    if (brand === "amaron") brandMult = 1.05;
+    else if (brand === "tata") brandMult = 0.90;
+
+    const finalCost = Math.round(base * brandMult) - 150; // ₹150 scrap back discount
+    costEl.innerText = "₹" + finalCost.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 5. Tire Cost Calculator
+  function calculateTireCost() {
+    const pos = document.getElementById("tire-position").value;
+    const veh = document.getElementById("tire-vehicle").value;
+    const resultBox = document.getElementById("tire-result");
+    const costEl = document.getElementById("tire-est-cost");
+    if (!resultBox || !costEl) return;
+
+    let base = 1200; // Scooter standard
+    if (veh === "commuter") base = 1550;
+    else if (veh === "cruiser") base = 3800;
+
+    let mult = 1.0;
+    if (pos === "rear") mult = 1.15; 
+    else if (pos === "both") mult = 2.10; 
+
+    const finalCost = Math.round(base * mult) + (pos === "both" ? 300 : 150); 
+    costEl.innerText = "₹" + finalCost.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 6. Helmet Size Calculator
+  function calculateHelmetSize() {
+    const cm = parseInt(document.getElementById("helmet-size-cm").value) || 0;
+    const resultBox = document.getElementById("helmet-result");
+    const sizeEl = document.getElementById("helmet-est-size");
+    if (!resultBox || !sizeEl) return;
+
+    let fit = "Unknown (Check measurement)";
+    if (cm >= 53 && cm <= 54) fit = "XS (Extra Small)";
+    else if (cm >= 55 && cm <= 56) fit = "S (Small)";
+    else if (cm >= 57 && cm <= 58) fit = "M (Medium)";
+    else if (cm >= 59 && cm <= 60) fit = "L (Large)";
+    else if (cm >= 61 && cm <= 62) fit = "XL (Extra Large)";
+    else if (cm >= 63 && cm <= 64) fit = "XXL (Double Extra Large)";
+    else if (cm < 53) fit = "Kids / XS Special";
+    else if (cm > 64) fit = "XXXL Custom Size";
+
+    sizeEl.innerText = fit;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 7. Insurance IDV Calculator
+  function calculateIDV() {
+    const price = parseFloat(document.getElementById("idv-price").value) || 0;
+    const dep = parseFloat(document.getElementById("idv-age").value);
+    const resultBox = document.getElementById("idv-result");
+    const valEl = document.getElementById("idv-est-value");
+    if (!resultBox || !valEl) return;
+
+    const idv = Math.round(price * (1 - dep));
+    valEl.innerText = "₹" + idv.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 8. Loan Prepayment Calculator
+  function calculatePrepayment() {
+    const principal = parseFloat(document.getElementById("prepay-principal").value) || 0;
+    const rate = parseFloat(document.getElementById("prepay-rate").value) || 10;
+    const emi = parseFloat(document.getElementById("prepay-emi").value) || 1;
+    const prepay = parseFloat(document.getElementById("prepay-amount").value) || 0;
+
+    const resultBox = document.getElementById("prepay-result");
+    const savingsEl = document.getElementById("prepay-est-savings");
+    const tenureEl = document.getElementById("prepay-tenure-savings");
+
+    if (!resultBox || !savingsEl) return;
+
+    const r = (rate / 12) / 100;
+    const originalMonths = Math.round(principal / emi);
+    const newPrincipal = principal - prepay;
+    const newMonths = Math.round(newPrincipal / emi);
+    
+    const interestSaved = Math.round((principal * r * originalMonths) - (newPrincipal * r * newMonths));
+    const monthsReduced = originalMonths - newMonths;
+
+    savingsEl.innerText = "₹" + (interestSaved > 0 ? interestSaved : 0).toLocaleString("en-IN");
+    if (tenureEl) {
+      tenureEl.innerText = "Tenure reduced by approx " + (monthsReduced > 0 ? monthsReduced : 0) + " months";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 9. Riding Cost Per Km Calculator
+  function calculateRunningCost() {
+    const avg = parseFloat(document.getElementById("run-avg").value) || 1;
+    const petrol = parseFloat(document.getElementById("run-petrol").value) || 100;
+    const resultBox = document.getElementById("run-result");
+    const costEl = document.getElementById("run-est-cost");
+    if (!resultBox || !costEl) return;
+
+    const fuelCost = petrol / avg;
+    const totalCost = (fuelCost + 0.35).toFixed(2);
+
+    costEl.innerText = "₹" + totalCost + " / km";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 10. Electric Charging Cost Calculator
+  function calculateChargingCost() {
+    const cap = parseFloat(document.getElementById("charge-capacity").value) || 3;
+    const costPerUnit = parseFloat(document.getElementById("charge-type").value);
+    const resultBox = document.getElementById("charge-result");
+    const costEl = document.getElementById("charge-est-cost");
+    if (!resultBox || !costEl) return;
+
+    const total = (cap * costPerUnit).toFixed(2);
+    costEl.innerText = "₹" + total;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 11. Home Charging Time Calculator
+  function calculateChargingTime() {
+    const cap = parseFloat(document.getElementById("time-capacity").value) || 3;
+    const charger = parseFloat(document.getElementById("time-charger").value);
+    const resultBox = document.getElementById("time-result");
+    const hoursEl = document.getElementById("time-est-hours");
+    if (!resultBox || !hoursEl) return;
+
+    const hrs = ((cap / charger) * 1.1).toFixed(1);
+    hoursEl.innerText = hrs + " Hours";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 12. Range Estimator for EVs
+  function calculateEVRange() {
+    const cap = parseFloat(document.getElementById("range-capacity").value) || 3.4;
+    const mode = document.getElementById("range-mode").value;
+    const load = document.getElementById("range-load").value;
+    const terrain = document.getElementById("range-terrain").value;
+    const resultBox = document.getElementById("range-result");
+    const rangeEl = document.getElementById("range-est-km");
+    if (!resultBox || !rangeEl) return;
+
+    let base = cap * 35;
+    
+    let modeFactor = 1.0;
+    if (mode === "eco") modeFactor = 1.15;
+    else if (mode === "sports") modeFactor = 0.72;
+
+    let loadFactor = 1.0;
+    if (load === "double") loadFactor = 0.82;
+
+    let terrainFactor = 1.0;
+    if (terrain === "hilly") terrainFactor = 0.78;
+
+    const finalRange = Math.round(base * modeFactor * loadFactor * terrainFactor);
+    rangeEl.innerText = finalRange + " Km";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 13. Monthly Commuting Cost Calculator
+  function calculateCommutingCost() {
+    const dist = parseFloat(document.getElementById("commute-distance").value) || 0;
+    const mode = document.getElementById("commute-mode").value;
+    const resultBox = document.getElementById("commute-result");
+    const costEl = document.getElementById("commute-est-cost");
+    const tipEl = document.getElementById("commute-savings-tip");
+    if (!resultBox || !costEl) return;
+
+    let perKm = 22; 
+    if (mode === "auto") perKm = 15;
+    else if (mode === "personal") perKm = 4.5;
+
+    const monthlyDist = dist * 22; 
+    const totalCost = Math.round(monthlyDist * perKm);
+    costEl.innerText = "₹" + totalCost.toLocaleString("en-IN");
+    
+    if (tipEl) {
+      if (mode === "personal") {
+        tipEl.innerHTML = "*Renting a RYDHO scooter at ₹5,980/month saves you from annual insurance renewals, tyre wear, and immediate depreciation loss!";
+      } else {
+        const savings = totalCost - 5980;
+        tipEl.innerHTML = "*Renting a RYDHO scooter at ₹5,980/month saves you approx <strong>₹" + (savings > 0 ? savings : 0).toLocaleString("en-IN") + "</strong> monthly!";
+      }
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 14. Bike Affordability Calculator
+  function calculateAffordability() {
+    const salary = parseFloat(document.getElementById("afford-salary").value) || 0;
+    const emi = parseFloat(document.getElementById("afford-emi").value) || 0;
+    const resultBox = document.getElementById("afford-result");
+    const budgetEl = document.getElementById("afford-budget");
+    const limitEl = document.getElementById("afford-emi-limit");
+    if (!resultBox || !budgetEl) return;
+
+    const maxEmi = (salary * 0.10) - emi;
+    const safeEmi = maxEmi > 500 ? maxEmi : 1500;
+    const affordableBudget = Math.round(safeEmi * 36);
+
+    budgetEl.innerText = "₹" + (affordableBudget > 50000 ? affordableBudget : 65000).toLocaleString("en-IN");
+    if (limitEl) {
+      limitEl.innerText = "*Recommended Max EMI: ₹" + Math.round(safeEmi).toLocaleString("en-IN") + "/month (10% take-home limit)";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 15. RTO Fee Estimator
+  function estimateRTOFees() {
+    const state = document.getElementById("rto-state").value;
+    const service = document.getElementById("rto-service").value;
+    const resultBox = document.getElementById("rto-result");
+    const feeEl = document.getElementById("rto-est-fee");
+    const checklistEl = document.getElementById("rto-checklist");
+    if (!resultBox || !feeEl) return;
+
+    let fee = 150;
+    let desc = "*Required papers: Original RC, Form 29 & 30, valid insurance, PUC";
+
+    if (service === "noc") {
+      fee = 100;
+      desc = "*Requires police clearance certificate and Form 28 (3 copies)";
+    } else if (service === "hp") {
+      fee = 500;
+      desc = "*Requires bank NOC Form 35 and loan closure clearance letter";
+    } else if (service === "duplicate") {
+      fee = 150;
+      desc = "*Requires police FIR copy and Form 26 application";
+    }
+
+    if (state === "KA" || state === "MH") {
+      fee += 200; 
+    }
+
+    feeEl.innerText = "₹" + fee;
+    if (checklistEl) checklistEl.innerText = desc;
+
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 16. Registration Cost Calculator
+  function calculateRegistrationCost() {
+    const price = parseFloat(document.getElementById("reg-price").value) || 0;
+    const rate = parseFloat(document.getElementById("reg-state").value);
+    const type = document.getElementById("reg-type").value;
+    const resultBox = document.getElementById("reg-result");
+    const costEl = document.getElementById("reg-est-cost");
+    if (!resultBox || !costEl) return;
+
+    let roadTax = price * rate;
+    if (type === "electric") {
+      roadTax = 0; 
+    }
+
+    const registrationFee = 300;
+    const hsrpPlateFee = 450;
+    const smartCardFee = 200;
+    const total = Math.round(roadTax + registrationFee + hsrpPlateFee + smartCardFee);
+
+    costEl.innerText = "₹" + total.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 17. PUC Renewal Reminder Calculator
+  function checkPUCValidity() {
+    const std = document.getElementById("puc-standard").value;
+    const isNew = document.getElementById("puc-new").value;
+    const resultBox = document.getElementById("puc-result");
+    const validityEl = document.getElementById("puc-est-validity");
+    const penaltyEl = document.getElementById("puc-penalty");
+    if (!resultBox || !validityEl) return;
+
+    let duration = "12 Months (1 Year)";
+    let desc = "*New vehicles do not require a PUC certificate for the first year of registration.";
+
+    if (isNew === "yes") {
+      duration = "Exempt (First Year)";
+    } else {
+      if (std === "bs4") {
+        duration = "6 Months Validity";
+        desc = "*BS4/BS3/older bikes require renewal every 6 months to avoid hefty fines.";
+      }
+    }
+
+    validityEl.innerText = duration;
+    if (penaltyEl) penaltyEl.innerText = desc;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 18. Carbon Emission Calculator
+  function calculateCarbonFootprint() {
+    const dist = parseFloat(document.getElementById("co2-distance").value) || 0;
+    const veh = document.getElementById("co2-vehicle").value;
+    const resultBox = document.getElementById("co2-result");
+    const weightEl = document.getElementById("co2-est-weight");
+    const offsetEl = document.getElementById("co2-offset-trees");
+    if (!resultBox || !weightEl) return;
+
+    let emissionPerKm = 0.041; 
+    if (veh === "cruiser") emissionPerKm = 0.065;
+    else if (veh === "ev") emissionPerKm = 0.008; 
+
+    const totalWeight = (dist * emissionPerKm).toFixed(1);
+    const trees = Math.ceil(totalWeight / 2);
+
+    weightEl.innerText = totalWeight + " kg CO₂ / Month";
+    if (offsetEl) {
+      offsetEl.innerText = "Requires planting " + (trees > 0 ? trees : 1) + " mature trees to offset your travel footprint.";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>

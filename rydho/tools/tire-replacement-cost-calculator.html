@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tire Replacement Cost Calculator | RYDHO Tools</title>
+  <meta name="description" content="Estimate tubeless tyre replacement rates.">
+  <meta name="keywords" content="resale value, mileage calculator, average calculator, challan lookup">
+  <link rel="canonical" href="https://rydho.com/tools/tire-replacement-cost-calculator.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rydho.com/tools/tire-replacement-cost-calculator.html">
+  <meta property="og:title" content="Tire Replacement Cost Calculator | RYDHO Tools">
+  <meta property="og:description" content="Estimate tubeless tyre replacement rates.">
+  <meta property="og:image" content="https://rydho.com/assets/images/rydho_share_banner.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://rydho.com/tools/tire-replacement-cost-calculator.html">
+  <meta property="twitter:title" content="Tire Replacement Cost Calculator | RYDHO Tools">
+  <meta property="twitter:description" content="Estimate tubeless tyre replacement rates.">
+  <meta property="twitter:image" content="https://rydho.com/assets/images/rydho_share_banner.jpg">
+
+  <!-- Web App & PWA settings -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f11287">
+  <link rel="apple-touch-icon" href="/assets/icons/logo.png">
+  <link rel="icon" href="/assets/icons/logo.png" type="image/png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Programmatic Schema Markup (AEO & Search) -->
+  <script type="application/ld+json">
+    {}
+  </script>
+</head>
+<body>
+
+  <!-- PWA Install Prompt Banner -->
+<div id="pwa-install-banner" class="pwa-banner">
+  <div class="pwa-banner-inner">
+    <div>
+      <strong>Install RYDHO Web App</strong> - Fast bookings, works offline, and uses 0% extra data.
+    </div>
+    <div class="pwa-actions">
+      <button id="pwa-btn-install" class="btn-pwa-install">Install App</button>
+      <button id="pwa-btn-close" class="btn-pwa-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Header Navigation Bar -->
+<header>
+  <div class="container navbar">
+    <a href="/" class="logo" aria-label="RYDHO Home">
+      <img src="/assets/icons/logo.png" alt="RYDHO" class="logo-img" width="200" height="57" fetchpriority="high">
+    </a>
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/bike-rental.html">Bikes</a></li>
+        <li><a href="/scooter-rental.html">Scooters</a></li>
+        <li><a href="/rto-agents.html">RTO Agents</a></li>
+        <li><a href="/repair-breakdown.html">Breakdown Help</a></li>
+        <li><a href="/resello.html" style="color:var(--primary); font-weight:700;"><i class="fa-solid fa-tags"></i> Buy/Sell</a></li>
+        <li><a href="/become-a-host.html">Become Host</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul>
+    </nav>
+    
+    <div class="nav-actions">
+      <a href="https://app.rydho.com/login" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">Login</a>
+      <a href="https://app.rydho.com/search" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Book Now</a>
+      <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+  
+  <main>
+    <!-- Tool Hero Header -->
+<section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, rgba(241, 18, 135, 0.05) 0%, rgba(17, 17, 17, 0.02) 100%); border-bottom: 1px solid var(--border-color);">
+  <div class="container" style="text-align: center; max-width: 800px;">
+    <span class="badge">RYDHO Free Utilities</span>
+    <h1>Tire Replacement Cost Calculator</h1>
+    <p style="color: var(--text-gray); font-size: 1.1rem; margin-top: 12px; margin-bottom: 24px;">Estimate tubeless tyre replacement rates.</p>
+    
+    <!-- Switcher Dropdown -->
+    <div style="max-width: 360px; margin: 0 auto;">
+      <select onchange="if(this.value) window.location.href='/tools/' + this.value + '.html'" style="width: 100%; padding: 12px 16px; border-radius: 30px; border: 1.5px solid var(--primary); background: #fff; font-weight: 600; color: var(--secondary); outline: none; cursor: pointer; box-shadow: var(--shadow-sm); text-align-last: center;">
+        <option value="">⚙️ Switch to Another Calculator</option>
+        <option value="used-bike-resale-value-calculator">Used Bike Resale Value Calculator</option>
+        <option value="bike-mileage-fuel-cost-calculator">Bike Mileage & Fuel Cost Calculator</option>
+        <option value="traffic-police-challan-consultant">Traffic Police Challan Advisor</option>
+        <option value="battery-replacement-cost-calculator">Battery Replacement Cost Calculator</option>
+        <option value="tire-replacement-cost-calculator">Tire Replacement Cost Calculator</option>
+        <option value="helmet-size-calculator">Helmet Size Calculator</option>
+        <option value="insurance-idv-calculator">Insurance IDV Calculator</option>
+        <option value="loan-prepayment-calculator">Loan Prepayment Calculator</option>
+        <option value="riding-cost-per-km-calculator">Riding Cost Per Km Calculator</option>
+        <option value="electric-charging-cost-calculator">Electric Charging Cost Calculator</option>
+        <option value="home-charging-time-calculator">Home Charging Time Calculator</option>
+        <option value="range-estimator-for-evs">Range Estimator for EVs</option>
+        <option value="monthly-commuting-cost-calculator">Monthly Commuting Cost Calculator</option>
+        <option value="bike-affordability-calculator">Bike Affordability Calculator</option>
+        <option value="rto-fee-estimator">RTO Fee Estimator</option>
+        <option value="registration-cost-calculator">Registration Cost Calculator</option>
+        <option value="puc-renewal-reminder-calculator">PUC Renewal Reminder Calculator</option>
+        <option value="carbon-emission-calculator">Carbon Emission Calculator</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- Calculator Widget Container -->
+<section class="section-padding" style="background-color: var(--bg-white);">
+  <div class="container" style="max-width: 900px;">
+    
+    
+
+    
+
+    
+
+    
+
+    
+    <!-- Tire Cost Calculator -->
+    <div style="background-color: var(--bg-light); border: 2px solid var(--border-color); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+      <h3 style="margin-bottom: 24px; text-align: center;"><i class="fa-solid fa-circle-nodes text-primary"></i> Tire Replacement Cost Calculator</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px;" class="hero-grid">
+        <div class="form-group">
+          <label>Tyre Position</label>
+          <select id="tire-position" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="front">Front Tyre Only</option>
+            <option value="rear">Rear Tyre Only (Heavier wear)</option>
+            <option value="both">Both Tyres (Set replacement)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Vehicle Category</label>
+          <select id="tire-vehicle" style="width: 100%; padding: 12px; border-radius:6px; border:1px solid var(--border-color);">
+            <option value="scooter">Gearless Scooter (e.g. Activa, 90/90-10)</option>
+            <option value="commuter">Commuter Bike (e.g. Splendor, Pulsar)</option>
+            <option value="cruiser">Cruiser / Heavy (e.g. Royal Enfield Bullet)</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calculateTireCost()" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding:14px;">Calculate Tire Price</button>
+      <div id="tire-result" style="display: none; margin-top: 30px; padding: 24px; background-color: var(--primary-glow); border: 2px dashed var(--primary); border-radius: var(--radius-sm); text-align: center;">
+        <span style="font-size: 0.9rem; color: var(--secondary);">Estimated Tyre Replacement Invoice</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 8px 0;" id="tire-est-cost">₹1,350</div>
+        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 12px;" id="tire-details">*Includes fitment and wheel balance fees</p>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    </div>
+</section>
+
+<!-- SEO Content Guide -->
+<section class="section-padding" style="background-color: var(--bg-light); border-top: 1px solid var(--border-color);">
+  <div class="container" style="max-width: 800px; line-height: 1.8; color: var(--text-dark);">
+    
+  </div>
+</section>
+
+<!-- Interactive logic scripts for calculators -->
+<script>
+  // 1. Resale Value Calculator
+  function calculateResale() {
+    const model = document.getElementById("resale-model").value;
+    const year = parseInt(document.getElementById("resale-year").value);
+    const kms = parseInt(document.getElementById("resale-kms").value) || 0;
+    const cond = document.getElementById("resale-condition").value;
+    const resultBox = document.getElementById("resale-result");
+    const valRange = document.getElementById("resale-valuation-range");
+
+    if (!resultBox || !valRange) return;
+
+    let baseVal = 85000; // Activa original
+    if (model === "classic") baseVal = 220000;
+    else if (model === "pulsar") baseVal = 130000;
+    else if (model === "jupiter") baseVal = 80000;
+    else if (model === "fzs") baseVal = 125000;
+
+    // Year depreciation factor
+    const age = 2026 - year;
+    let depRate = 0.15; // 1 year
+    if (age === 2) depRate = 0.28;
+    else if (age === 3) depRate = 0.40;
+    else if (age === 4) depRate = 0.50;
+    else if (age >= 5) depRate = 0.60;
+
+    let depreciatedVal = baseVal * (1 - depRate);
+
+    // Kms impact
+    let kmsDep = 0;
+    if (kms > 30000) kmsDep = 0.12;
+    else if (kms > 15000) kmsDep = 0.06;
+    depreciatedVal = depreciatedVal * (1 - kmsDep);
+
+    // Condition adjustment
+    let condFactor = 1.0;
+    if (cond === "excellent") condFactor = 1.05;
+    else if (cond === "fair") condFactor = 0.90;
+    depreciatedVal = Math.round(depreciatedVal * condFactor);
+
+    // Range output
+    const low = Math.round(depreciatedVal * 0.95);
+    const high = Math.round(depreciatedVal * 1.05);
+
+    valRange.innerText = "₹" + low.toLocaleString("en-IN") + " - ₹" + high.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    
+    // Scroll to results smoothly
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 2. Mileage Calculator brand- and age-based logic
+  function updateEstimatedAvg() {
+    const brand = document.getElementById("mileage-brand")?.value || "honda";
+    const age = document.getElementById("mileage-age")?.value || "new";
+    const avgInput = document.getElementById("mileage-avg");
+    if (!avgInput) return;
+
+    // Base Brand Mileage averages in India
+    let base = 50; // Honda default (Activa)
+    if (brand === "hero") base = 65; // Splendor economy
+    else if (brand === "tvs") base = 48; // Jupiter/Apache mix
+    else if (brand === "bajaj") base = 52; // Platina/Pulsar mix
+    else if (brand === "yamaha") base = 45; // FZ/R15
+    else if (brand === "re") base = 35; // Royal Enfield cruiser
+
+    // Age depreciation penalty
+    let penalty = 1.0;
+    if (age === "mid") penalty = 0.92;
+    else if (age === "old") penalty = 0.85;
+    else if (age === "veryold") penalty = 0.76;
+
+    const finalAvg = Math.round(base * penalty);
+    avgInput.value = finalAvg;
+  }
+
+  // Trigger initial average set on load
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("mileage-brand")) {
+      updateEstimatedAvg();
+    }
+  });
+
+  function calculateMileage() {
+    const dist = parseFloat(document.getElementById("mileage-distance").value) || 0;
+    const price = parseFloat(document.getElementById("mileage-price").value) || 0;
+    const avg = parseFloat(document.getElementById("mileage-avg").value) || 1;
+    const days = parseInt(document.getElementById("mileage-days").value) || 0;
+    const resultBox = document.getElementById("mileage-result");
+    const costText = document.getElementById("mileage-cost");
+    const litersText = document.getElementById("mileage-liters");
+
+    if (!resultBox || !costText) return;
+
+    // Monthly distance = daily distance * days
+    const totalDist = dist * days;
+    // Monthly fuel needed = total distance / mileage
+    const fuelNeeded = totalDist / avg;
+    // Monthly cost = fuel needed * petrol price
+    const totalCost = Math.round(fuelNeeded * price);
+
+    costText.innerText = "₹" + totalCost.toLocaleString("en-IN");
+    if (litersText) {
+      litersText.innerText = "Consuming approx " + Math.round(fuelNeeded) + " liters of petrol monthly (" + totalDist + " km total distance)";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 3. Traffic Challan Advisor
+  function updateChallanAdvisor() {
+    const offense = document.getElementById("challan-offense").value;
+    const titleEl = document.getElementById("challan-fine-title");
+    const descEl = document.getElementById("challan-fine-desc");
+
+    if (!titleEl || !descEl) return;
+
+    const data = {
+      helmet: {
+        title: "Fine: ₹1,000 + 3 Months License Suspension",
+        desc: "Under Section 194D of the Motor Vehicles Act, riding a two-wheeler without a protective headgear helmet attracts a fine of ₹1,000. Additionally, traffic authorities have the power to suspend or disqualify your Driving License (DL) for a period of 3 months."
+      },
+      license: {
+        title: "Fine: ₹5,000 + Potential Imprisonment",
+        desc: "Under Section 181 of the Motor Vehicles Act, driving/riding a vehicle without possessing a valid driving license is a serious offense. It attracts a heavy court challan penalty fine of ₹5,000, and/or community service, or imprisonment of up to 3 months."
+      },
+      speeding: {
+        title: "Fine: ₹1,000 to ₹2,000 (Light Motor Vehicle)",
+        desc: "Under Section 183 of the Act, over-speeding two-wheelers are subject to fine penalties. First-time offenses attract a fine between ₹1,000 and ₹2,000. Subsequent violations can lead to suspension of license."
+      },
+      triple: {
+        title: "Fine: ₹1,000 + License Suspension",
+        desc: "Under Section 194C of the Motor Vehicles Act, carrying more than one pillion rider (triple seat) on a two-wheeler is highly prohibited. It attracts a fine of ₹1,000 and a 3-month driving license suspension."
+      },
+      insurance: {
+        title: "Fine: ₹2,000 and/or Up to 3 Months Prison",
+        desc: "Under Section 196 of the Act, driving an uninsured vehicle (without third-party liability coverage) attracts a penalty fine of ₹2,000 for the first offense and/or imprisonment of up to 3 months."
+      }
+    };
+
+      if (data[offense]) {
+        titleEl.innerText = data[offense].title;
+        descEl.innerText = data[offense].desc;
+      }
+    }
+
+  // 4. Battery Cost Calculator
+  function calculateBatteryCost() {
+    const type = document.getElementById("battery-vehicle-type").value;
+    const brand = document.getElementById("battery-brand").value;
+    const resultBox = document.getElementById("battery-result");
+    const costEl = document.getElementById("battery-est-cost");
+    const detailsEl = document.getElementById("battery-details");
+    if (!resultBox || !costEl) return;
+
+    let base = 1600;
+    if (type === "scooter-125") base = 1850;
+    else if (type === "bike-commute") base = 1500;
+    else if (type === "bike-cruiser") base = 3200;
+
+    let brandMult = 1.0;
+    if (brand === "amaron") brandMult = 1.05;
+    else if (brand === "tata") brandMult = 0.90;
+
+    const finalCost = Math.round(base * brandMult) - 150; // ₹150 scrap back discount
+    costEl.innerText = "₹" + finalCost.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 5. Tire Cost Calculator
+  function calculateTireCost() {
+    const pos = document.getElementById("tire-position").value;
+    const veh = document.getElementById("tire-vehicle").value;
+    const resultBox = document.getElementById("tire-result");
+    const costEl = document.getElementById("tire-est-cost");
+    if (!resultBox || !costEl) return;
+
+    let base = 1200; // Scooter standard
+    if (veh === "commuter") base = 1550;
+    else if (veh === "cruiser") base = 3800;
+
+    let mult = 1.0;
+    if (pos === "rear") mult = 1.15; 
+    else if (pos === "both") mult = 2.10; 
+
+    const finalCost = Math.round(base * mult) + (pos === "both" ? 300 : 150); 
+    costEl.innerText = "₹" + finalCost.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 6. Helmet Size Calculator
+  function calculateHelmetSize() {
+    const cm = parseInt(document.getElementById("helmet-size-cm").value) || 0;
+    const resultBox = document.getElementById("helmet-result");
+    const sizeEl = document.getElementById("helmet-est-size");
+    if (!resultBox || !sizeEl) return;
+
+    let fit = "Unknown (Check measurement)";
+    if (cm >= 53 && cm <= 54) fit = "XS (Extra Small)";
+    else if (cm >= 55 && cm <= 56) fit = "S (Small)";
+    else if (cm >= 57 && cm <= 58) fit = "M (Medium)";
+    else if (cm >= 59 && cm <= 60) fit = "L (Large)";
+    else if (cm >= 61 && cm <= 62) fit = "XL (Extra Large)";
+    else if (cm >= 63 && cm <= 64) fit = "XXL (Double Extra Large)";
+    else if (cm < 53) fit = "Kids / XS Special";
+    else if (cm > 64) fit = "XXXL Custom Size";
+
+    sizeEl.innerText = fit;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 7. Insurance IDV Calculator
+  function calculateIDV() {
+    const price = parseFloat(document.getElementById("idv-price").value) || 0;
+    const dep = parseFloat(document.getElementById("idv-age").value);
+    const resultBox = document.getElementById("idv-result");
+    const valEl = document.getElementById("idv-est-value");
+    if (!resultBox || !valEl) return;
+
+    const idv = Math.round(price * (1 - dep));
+    valEl.innerText = "₹" + idv.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 8. Loan Prepayment Calculator
+  function calculatePrepayment() {
+    const principal = parseFloat(document.getElementById("prepay-principal").value) || 0;
+    const rate = parseFloat(document.getElementById("prepay-rate").value) || 10;
+    const emi = parseFloat(document.getElementById("prepay-emi").value) || 1;
+    const prepay = parseFloat(document.getElementById("prepay-amount").value) || 0;
+
+    const resultBox = document.getElementById("prepay-result");
+    const savingsEl = document.getElementById("prepay-est-savings");
+    const tenureEl = document.getElementById("prepay-tenure-savings");
+
+    if (!resultBox || !savingsEl) return;
+
+    const r = (rate / 12) / 100;
+    const originalMonths = Math.round(principal / emi);
+    const newPrincipal = principal - prepay;
+    const newMonths = Math.round(newPrincipal / emi);
+    
+    const interestSaved = Math.round((principal * r * originalMonths) - (newPrincipal * r * newMonths));
+    const monthsReduced = originalMonths - newMonths;
+
+    savingsEl.innerText = "₹" + (interestSaved > 0 ? interestSaved : 0).toLocaleString("en-IN");
+    if (tenureEl) {
+      tenureEl.innerText = "Tenure reduced by approx " + (monthsReduced > 0 ? monthsReduced : 0) + " months";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 9. Riding Cost Per Km Calculator
+  function calculateRunningCost() {
+    const avg = parseFloat(document.getElementById("run-avg").value) || 1;
+    const petrol = parseFloat(document.getElementById("run-petrol").value) || 100;
+    const resultBox = document.getElementById("run-result");
+    const costEl = document.getElementById("run-est-cost");
+    if (!resultBox || !costEl) return;
+
+    const fuelCost = petrol / avg;
+    const totalCost = (fuelCost + 0.35).toFixed(2);
+
+    costEl.innerText = "₹" + totalCost + " / km";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 10. Electric Charging Cost Calculator
+  function calculateChargingCost() {
+    const cap = parseFloat(document.getElementById("charge-capacity").value) || 3;
+    const costPerUnit = parseFloat(document.getElementById("charge-type").value);
+    const resultBox = document.getElementById("charge-result");
+    const costEl = document.getElementById("charge-est-cost");
+    if (!resultBox || !costEl) return;
+
+    const total = (cap * costPerUnit).toFixed(2);
+    costEl.innerText = "₹" + total;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 11. Home Charging Time Calculator
+  function calculateChargingTime() {
+    const cap = parseFloat(document.getElementById("time-capacity").value) || 3;
+    const charger = parseFloat(document.getElementById("time-charger").value);
+    const resultBox = document.getElementById("time-result");
+    const hoursEl = document.getElementById("time-est-hours");
+    if (!resultBox || !hoursEl) return;
+
+    const hrs = ((cap / charger) * 1.1).toFixed(1);
+    hoursEl.innerText = hrs + " Hours";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 12. Range Estimator for EVs
+  function calculateEVRange() {
+    const cap = parseFloat(document.getElementById("range-capacity").value) || 3.4;
+    const mode = document.getElementById("range-mode").value;
+    const load = document.getElementById("range-load").value;
+    const terrain = document.getElementById("range-terrain").value;
+    const resultBox = document.getElementById("range-result");
+    const rangeEl = document.getElementById("range-est-km");
+    if (!resultBox || !rangeEl) return;
+
+    let base = cap * 35;
+    
+    let modeFactor = 1.0;
+    if (mode === "eco") modeFactor = 1.15;
+    else if (mode === "sports") modeFactor = 0.72;
+
+    let loadFactor = 1.0;
+    if (load === "double") loadFactor = 0.82;
+
+    let terrainFactor = 1.0;
+    if (terrain === "hilly") terrainFactor = 0.78;
+
+    const finalRange = Math.round(base * modeFactor * loadFactor * terrainFactor);
+    rangeEl.innerText = finalRange + " Km";
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 13. Monthly Commuting Cost Calculator
+  function calculateCommutingCost() {
+    const dist = parseFloat(document.getElementById("commute-distance").value) || 0;
+    const mode = document.getElementById("commute-mode").value;
+    const resultBox = document.getElementById("commute-result");
+    const costEl = document.getElementById("commute-est-cost");
+    const tipEl = document.getElementById("commute-savings-tip");
+    if (!resultBox || !costEl) return;
+
+    let perKm = 22; 
+    if (mode === "auto") perKm = 15;
+    else if (mode === "personal") perKm = 4.5;
+
+    const monthlyDist = dist * 22; 
+    const totalCost = Math.round(monthlyDist * perKm);
+    costEl.innerText = "₹" + totalCost.toLocaleString("en-IN");
+    
+    if (tipEl) {
+      if (mode === "personal") {
+        tipEl.innerHTML = "*Renting a RYDHO scooter at ₹5,980/month saves you from annual insurance renewals, tyre wear, and immediate depreciation loss!";
+      } else {
+        const savings = totalCost - 5980;
+        tipEl.innerHTML = "*Renting a RYDHO scooter at ₹5,980/month saves you approx <strong>₹" + (savings > 0 ? savings : 0).toLocaleString("en-IN") + "</strong> monthly!";
+      }
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 14. Bike Affordability Calculator
+  function calculateAffordability() {
+    const salary = parseFloat(document.getElementById("afford-salary").value) || 0;
+    const emi = parseFloat(document.getElementById("afford-emi").value) || 0;
+    const resultBox = document.getElementById("afford-result");
+    const budgetEl = document.getElementById("afford-budget");
+    const limitEl = document.getElementById("afford-emi-limit");
+    if (!resultBox || !budgetEl) return;
+
+    const maxEmi = (salary * 0.10) - emi;
+    const safeEmi = maxEmi > 500 ? maxEmi : 1500;
+    const affordableBudget = Math.round(safeEmi * 36);
+
+    budgetEl.innerText = "₹" + (affordableBudget > 50000 ? affordableBudget : 65000).toLocaleString("en-IN");
+    if (limitEl) {
+      limitEl.innerText = "*Recommended Max EMI: ₹" + Math.round(safeEmi).toLocaleString("en-IN") + "/month (10% take-home limit)";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 15. RTO Fee Estimator
+  function estimateRTOFees() {
+    const state = document.getElementById("rto-state").value;
+    const service = document.getElementById("rto-service").value;
+    const resultBox = document.getElementById("rto-result");
+    const feeEl = document.getElementById("rto-est-fee");
+    const checklistEl = document.getElementById("rto-checklist");
+    if (!resultBox || !feeEl) return;
+
+    let fee = 150;
+    let desc = "*Required papers: Original RC, Form 29 & 30, valid insurance, PUC";
+
+    if (service === "noc") {
+      fee = 100;
+      desc = "*Requires police clearance certificate and Form 28 (3 copies)";
+    } else if (service === "hp") {
+      fee = 500;
+      desc = "*Requires bank NOC Form 35 and loan closure clearance letter";
+    } else if (service === "duplicate") {
+      fee = 150;
+      desc = "*Requires police FIR copy and Form 26 application";
+    }
+
+    if (state === "KA" || state === "MH") {
+      fee += 200; 
+    }
+
+    feeEl.innerText = "₹" + fee;
+    if (checklistEl) checklistEl.innerText = desc;
+
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 16. Registration Cost Calculator
+  function calculateRegistrationCost() {
+    const price = parseFloat(document.getElementById("reg-price").value) || 0;
+    const rate = parseFloat(document.getElementById("reg-state").value);
+    const type = document.getElementById("reg-type").value;
+    const resultBox = document.getElementById("reg-result");
+    const costEl = document.getElementById("reg-est-cost");
+    if (!resultBox || !costEl) return;
+
+    let roadTax = price * rate;
+    if (type === "electric") {
+      roadTax = 0; 
+    }
+
+    const registrationFee = 300;
+    const hsrpPlateFee = 450;
+    const smartCardFee = 200;
+    const total = Math.round(roadTax + registrationFee + hsrpPlateFee + smartCardFee);
+
+    costEl.innerText = "₹" + total.toLocaleString("en-IN");
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 17. PUC Renewal Reminder Calculator
+  function checkPUCValidity() {
+    const std = document.getElementById("puc-standard").value;
+    const isNew = document.getElementById("puc-new").value;
+    const resultBox = document.getElementById("puc-result");
+    const validityEl = document.getElementById("puc-est-validity");
+    const penaltyEl = document.getElementById("puc-penalty");
+    if (!resultBox || !validityEl) return;
+
+    let duration = "12 Months (1 Year)";
+    let desc = "*New vehicles do not require a PUC certificate for the first year of registration.";
+
+    if (isNew === "yes") {
+      duration = "Exempt (First Year)";
+    } else {
+      if (std === "bs4") {
+        duration = "6 Months Validity";
+        desc = "*BS4/BS3/older bikes require renewal every 6 months to avoid hefty fines.";
+      }
+    }
+
+    validityEl.innerText = duration;
+    if (penaltyEl) penaltyEl.innerText = desc;
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 18. Carbon Emission Calculator
+  function calculateCarbonFootprint() {
+    const dist = parseFloat(document.getElementById("co2-distance").value) || 0;
+    const veh = document.getElementById("co2-vehicle").value;
+    const resultBox = document.getElementById("co2-result");
+    const weightEl = document.getElementById("co2-est-weight");
+    const offsetEl = document.getElementById("co2-offset-trees");
+    if (!resultBox || !weightEl) return;
+
+    let emissionPerKm = 0.041; 
+    if (veh === "cruiser") emissionPerKm = 0.065;
+    else if (veh === "ev") emissionPerKm = 0.008; 
+
+    const totalWeight = (dist * emissionPerKm).toFixed(1);
+    const trees = Math.ceil(totalWeight / 2);
+
+    weightEl.innerText = totalWeight + " kg CO₂ / Month";
+    if (offsetEl) {
+      offsetEl.innerText = "Requires planting " + (trees > 0 ? trees : 1) + " mature trees to offset your travel footprint.";
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+  </main>
+  
+  <footer>
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <div class="footer-logo">
+        <img src="/assets/icons/logo.png" alt="RYDHO" class="logo-img footer-logo-img" width="248" height="70">
+      </div>
+      <p>RYDHO is India's premium commission-based two-wheeler rental marketplace. Rent clean, well-maintained scooters and motorcycles from verified local hosts starting at ₹199/day.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-links-col">
+      <h4>Services & Tools</h4>
+      <ul>
+        <li><a href="/resello.html">Used Buy/Sell Marketplace</a></li>
+        <li><a href="/rto-agents.html">RTO Agents & NOC</a></li>
+        <li><a href="/repair-breakdown.html">Breakdown Mechanics</a></li>
+        <li><a href="/tools/used-bike-resale-value-calculator.html">Bike Value Valuation</a></li>
+        <li><a href="/tools/bike-mileage-fuel-cost-calculator.html">Mileage Fuel Expenses</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-links-col">
+      <h4>Hosts & Partners</h4>
+      <ul>
+        <li><a href="/become-a-host.html">Become a Host</a></li>
+        <li><a href="/partner-program.html">Partner Program</a></li>
+        <li><a href="/legal/vendor-agreement.html">Vendor Agreement</a></li>
+        <li><a href="/legal/marketplace-rules.html">Marketplace Rules</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-links-col">
+      <h4>Trust & Security</h4>
+      <div class="trust-badges-footer">
+        <div class="badge-item"><i class="fa-solid fa-shield-halved"></i> 100% Insured Fleet</div>
+        <div class="badge-item"><i class="fa-solid fa-id-card"></i> Instant KYC Verification</div>
+        <div class="badge-item"><i class="fa-solid fa-lock"></i> SSL Secured Payments</div>
+        <div class="badge-item"><i class="fa-solid fa-headset"></i> 24/7 Roadside Assistance</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container footer-bottom">
+    <p>&copy; 2026 RYDHO Marketplace. All rights reserved. Registered with Ministry of Tourism.</p>
+    <div>
+      <a href="/legal/terms-and-conditions.html" style="margin-right: 16px;">Terms</a>
+      <a href="/legal/privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky Floating Conversions -->
+<a href="https://wa.me/919423217227?text=Hi%20RYDHO,%20I%20want%20to%20rent%20a%20bike!" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- App-Style Bottom Navigation for Mobile Devices -->
+<div class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="/index.html" class="mobile-nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="/bike-rental.html" class="mobile-nav-item">
+      <i class="fa-solid fa-motorcycle"></i>
+      <span>Rentals</span>
+    </a>
+    <a href="/become-a-host.html" class="mobile-nav-item">
+      <i class="fa-solid fa-piggy-bank"></i>
+      <span>Share & Earn</span>
+    </a>
+    <a href="https://wa.me/919423217227?text=Hi%20RYDHO,%20I%20want%20to%20rent%20a%20scooter!" target="_blank" class="mobile-nav-item">
+      <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+      <span>Chat</span>
+    </a>
+  </div>
+</div>
+
+
+  <!-- Scripts -->
+  <script src="/src/js/api.js"></script>
+  <script src="/src/js/main.js"></script>
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('RYDHO SW: Registered successfully', reg.scope))
+          .catch(err => console.warn('RYDHO SW: Registration failed', err));
+      });
+    }
+  </script>
+</body>
+</html>

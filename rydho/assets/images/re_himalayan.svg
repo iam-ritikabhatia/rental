@@ -1,0 +1,82 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#f3f4f8" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f11287;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#f11287;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Metallic paint & chrome -->
+    <linearGradient id="metalGrey" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a4a5a" />
+      <stop offset="50%" style="stop-color:#2a2a35" />
+      <stop offset="100%" style="stop-color:#16161c" />
+    </linearGradient>
+    <linearGradient id="bodyPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f11287" />
+      <stop offset="100%" style="stop-color:#bd0c67" />
+    </linearGradient>
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dedede" />
+      <stop offset="50%" style="stop-color:#ffffff" />
+      <stop offset="100%" style="stop-color:#adadad" />
+    </linearGradient>
+    <linearGradient id="tireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3c3c44" />
+      <stop offset="100%" style="stop-color:#0d0d0f" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" rx="18" fill="url(#bgGrad)" />
+  <circle cx="200" cy="140" r="130" fill="url(#glow)" />
+  
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="245" rx="150" ry="10" fill="rgba(13,13,18,0.18)" filter="blur(5px)" />
+  
+  <!-- Spoke Rear Wheel -->
+  <circle cx="100" cy="205" r="42" fill="url(#tireGrad)" stroke="#fff" stroke-width="4" />
+  <circle cx="100" cy="205" r="28" fill="none" stroke="url(#chrome)" stroke-width="3" />
+  <!-- Spokes -->
+  <path d="M 100,163 L 100,247 M 58,205 L 142,205 M 70,175 L 130,235 M 70,235 L 130,175" stroke="url(#chrome)" stroke-width="1.5" />
+  <circle cx="100" cy="205" r="14" fill="url(#metalGrey)" />
+
+  <!-- Spoke Front Wheel -->
+  <circle cx="300" cy="205" r="42" fill="url(#tireGrad)" stroke="#fff" stroke-width="4" />
+  <circle cx="300" cy="205" r="28" fill="none" stroke="url(#chrome)" stroke-width="3" />
+  <!-- Spokes -->
+  <path d="M 300,163 L 300,247 M 258,205 L 342,205 M 270,175 L 330,235 M 270,235 L 330,175" stroke="url(#chrome)" stroke-width="1.5" />
+  <circle cx="300" cy="205" r="14" fill="url(#metalGrey)" />
+
+  <!-- Front Forks suspension -->
+  <path d="M 300,205 L 260,110" stroke="url(#chrome)" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Engine Cylinders Block (Layered Mechanical Details) -->
+  <rect x="150" y="165" width="65" height="50" rx="6" fill="url(#metalGrey)" stroke="#fff" stroke-width="1" />
+  <line x1="145" y1="175" x2="220" y2="175" stroke="#ffffff" stroke-width="3" />
+  <line x1="145" y1="185" x2="220" y2="185" stroke="#ffffff" stroke-width="3" />
+  <line x1="145" y1="195" x2="220" y2="195" stroke="#ffffff" stroke-width="3" />
+  <circle cx="185" cy="180" r="10" fill="url(#chrome)" />
+  
+  <!-- Teardrop Fuel Tank -->
+  <path d="M 160,140 Q 210,105 250,135 L 245,160 L 165,160 Z" fill="url(#bodyPink)" />
+  <!-- Tank Pad Accent -->
+  <path d="M 195,130 Q 215,120 230,135" fill="none" stroke="url(#metalGrey)" stroke-width="8" stroke-linecap="round" />
+
+  <!-- Split Leather Seats -->
+  <path d="M 120,132 C 122,122 155,122 165,135 C 167,142 120,150 120,132 Z" fill="#1c1c20" /> <!-- Rider seat -->
+  <path d="M 88,146 C 90,140 115,140 120,150 Z" fill="#1c1c20" stroke="url(#chrome)" stroke-width="1" /> <!-- Pillion seat -->
+
+  <!-- Chrome Swept Silencer Exhaust -->
+  <path d="M 165,195 Q 220,195 285,212" fill="none" stroke="url(#chrome)" stroke-width="10" stroke-linecap="round" />
+  
+  <!-- Handlebars & Vintage Round Lamp -->
+  <path d="M 260,110 L 255,85 L 235,80" fill="none" stroke="url(#chrome)" stroke-width="8" stroke-linecap="round" />
+  <circle cx="268" cy="100" r="10" fill="url(#chrome)" />
+  <path d="M 268,100 L 278,100" stroke="#fff" stroke-width="8" stroke-linecap="round" /> <!-- Glow headlight -->
+</svg>

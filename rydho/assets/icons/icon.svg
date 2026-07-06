@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f11287;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ba0b65;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Base Grid Background -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  
+  <!-- Stylized Two-Wheeler Icon -->
+  <g transform="translate(64, 96)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rear Wheel -->
+    <circle cx="80" cy="240" r="64" />
+    <circle cx="80" cy="240" r="16" fill="#ffffff" />
+    
+    <!-- Front Wheel -->
+    <circle cx="304" cy="240" r="64" />
+    <circle cx="304" cy="240" r="16" fill="#ffffff" />
+    
+    <!-- Bike Frame Structure -->
+    <path d="M 80,240 L 160,140 L 250,140 L 304,240" />
+    <path d="M 160,140 L 130,70 L 100,70" /> <!-- Handle bar -->
+    <path d="M 130,240 L 160,140" /> <!-- Engine mount fork -->
+    
+    <!-- Premium Speed Trail accents -->
+    <path d="M 20,110 L 80,110" stroke-width="12" stroke-opacity="0.6" />
+    <path d="M 40,80 L 90,80" stroke-width="12" stroke-opacity="0.8" />
+  </g>
+</svg>

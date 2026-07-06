@@ -1,0 +1,594 @@
+<!-- Hero Search Banner (Split-Screen Layout) -->
+<section class="hero home-hero-section">
+  <div class="container hero-grid home-hero-grid">
+    
+    <!-- Left Column: Search Widget nested under branding -->
+    <div class="home-hero-col home-hero-copy-col">
+      <div style="margin-bottom: 24px;">
+        <span class="badge">Book. Ride. Repeat.</span>
+        <h1 class="hero-title">Rent Bikes, Scooters & Cars Across India</h1>
+        <p class="hero-subtitle">Activa, Royal Enfield, KTM and More. Instant Booking. Verified Vehicles. Transparent Pricing. | <strong>Verified Rides Always</strong></p>
+      </div>
+
+      <div class="search-widget home-search-widget">
+        <div>
+          <div class="search-tabs home-search-tabs">
+            <button type="button" class="search-tab active" data-type="bike"><i class="fa-solid fa-motorcycle text-primary"></i> Bike</button>
+            <button type="button" class="search-tab" onclick="alert('Car rentals are coming soon in next development phase!')"><i class="fa-solid fa-car"></i> Car</button>
+            <button type="button" class="search-tab" onclick="window.location.href='/self-drive-vehicles.html'"><i class="fa-solid fa-road"></i> Self Drive</button>
+            <button type="button" class="search-tab" onclick="window.location.href='/become-a-host.html'"><i class="fa-solid fa-calendar-days"></i> Monthly Lease</button>
+          </div>
+          <form id="hero-search-form" class="search-form home-search-form">
+            <div class="home-search-row">
+              <div class="form-group">
+                <label>Select City</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <select id="search-city" required>
+                    <option value="">Choose City</option>
+                    {{#each cities}}
+                    <option value="{{this.slug}}">{{this.name}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Select Area (Optional)</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  <select id="search-area">
+                    <option value="">All Areas</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="home-search-row">
+              <div class="form-group">
+                <label>Pickup Date</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-calendar-plus"></i>
+                  <input type="date" id="search-pickup" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Dropoff Date</label>
+                <div class="input-icon-wrapper">
+                  <i class="fa-solid fa-calendar-minus"></i>
+                  <input type="date" id="search-dropoff" required>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary home-search-submit">
+              Search Available Rides <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Key trust badges under widget inside card -->
+        <div class="home-trust-badges">
+          <div style="display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-circle-check text-primary"></i> Verified Fleet</div>
+          <div style="display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-circle-check text-primary"></i> Instant Book</div>
+          <div style="display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-circle-check text-primary"></i> Zero Deposit</div>
+          <div style="display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-circle-check text-primary"></i> 24/7 Support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Auto-sliding Ticker Carousel -->
+    <div class="home-hero-col home-hero-carousel-col hide-mobile-carousel">
+      <div class="home-hero-carousel-card">
+        <div class="home-hero-carousel-controls">
+          <button type="button" onclick="prevHeroSlide()" class="home-hero-nav-btn" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" onclick="nextHeroSlide()" class="home-hero-nav-btn" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div id="hero-slider" class="home-hero-slider">
+          <div class="home-hero-slide">
+            <img src="/assets/images/pune_hero.jpg" alt="RYDHO Pune Two-Wheeler Rentals">
+            <div class="home-hero-slide-caption">
+              <h4>Rent in Pune</h4>
+              <p>Ride through Hinjewadi, Kharadi, and Swargate starting at ₹199/day</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide">
+            <img src="/assets/images/mumbai_hero.jpg" alt="RYDHO Mumbai Scooter Rentals">
+            <div class="home-hero-slide-caption">
+              <h4>Rent in Mumbai</h4>
+              <p>Explore Marine Drive, Bandra, and Andheri with zero deposit</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide">
+            <img src="/assets/images/bengaluru_hero.jpg" alt="RYDHO Bangalore Motorcycle Rentals">
+            <div class="home-hero-slide-caption">
+              <h4>Rent in Bangalore</h4>
+              <p>Commute easily in Koramangala, Indiranagar, and HSR Layout</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide">
+            <img src="/assets/images/manali_hero.jpg" alt="RYDHO Manali Scenic Ride">
+            <div class="home-hero-slide-caption">
+              <h4>Rent in Manali</h4>
+              <p>Tour scenic valleys, Solang, and Rohtang pass on fresh two-wheelers</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide">
+            <img src="/assets/images/leh_hero.jpg" alt="RYDHO Leh Adventure Ride">
+            <div class="home-hero-slide-caption">
+              <h4>Ladakh &amp; Spiti Tours</h4>
+              <p>Conquer mountain lakes and high-altitude curves with Royal Enfield</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide home-hero-slide--infographic">
+            <img src="/assets/images/infographic.jpg" alt="RYDHO Services Infographic Chart">
+            <div class="home-hero-slide-caption">
+              <h4>8 Pillars of RYDHO Trust</h4>
+              <p>Digital KYC, flexible rentals, secure payments, and roadside help</p>
+            </div>
+          </div>
+
+          <div class="home-hero-slide home-hero-slide--host">
+            <div class="home-hero-host-panel">
+              <span class="badge home-hero-host-badge">Passive Host Program</span>
+              <h4>Earn with RYDHO</h4>
+              <p>List your idle scooter &amp; watch your earnings roll up!</p>
+              <div class="home-hero-earnings-box">
+                <span>Monthly Payout Rolling Live</span>
+                <div id="hero-rolling-money">₹0</div>
+                <span class="home-hero-roll-rate"><i class="fa-solid fa-chart-line"></i> +₹950 Daily Roll Rate</span>
+              </div>
+              <a href="/become-a-host.html" class="btn btn-primary">List Your Vehicle Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Popular Categories -->
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="badge">Explore Fleet</span>
+      <h2>Rent By Two-Wheeler Category</h2>
+      <p style="color: var(--text-gray); margin-top: 10px;">Select from comfortable scooters for city errands or powerful cruisers for road trips.</p>
+    </div>
+    
+    <div class="grid-3 home-categories-grid">
+      {{#each categories}}
+      <a href="/{{this.slug}}-rental.html" class="category-card">
+        <div class="category-img" style="background: url('{{this.image}}') center/cover #ddd;"></div>
+        <div class="category-info">
+          <h3>{{this.name}}</h3>
+          <p>{{this.description}}</p>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Popular Cities -->
+<section class="section-padding" style="background-color: var(--bg-white);">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="badge">Top Destinations</span>
+      <h2>Popular Cities</h2>
+      <p style="color: var(--text-gray); margin-top: 10px;">Fast bookings available in major tourist hubs and metropolitan tech parks.</p>
+    </div>
+    
+    <div class="cities-grid home-cities-grid">
+      {{#each cities}}
+      <a href="/cities/{{this.slug}}-bike-rental.html" class="city-card">
+        <img class="city-img" src="/{{this.image}}" alt="Bike &amp; scooter rental in {{this.name}}" loading="lazy">
+        <div class="city-overlay">
+          <div class="city-name">{{this.name}}</div>
+          <div class="city-subtitle">View Available Fleet <i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Featured Vehicles (Horizontal Scrolling Carousel) -->
+<section class="section-padding" style="background-image: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);">
+  <div class="container">
+    <div class="home-section-header">
+      <div>
+        <span class="badge" style="margin-bottom: 8px;">Recommended Rides</span>
+        <h2 style="font-size: 2.2rem; font-weight: 800;">Featured Two-Wheelers</h2>
+        <p style="color: var(--text-gray); margin-top: 6px;">Top-rated scooters and motorcycles with zero deposit and clean records.</p>
+      </div>
+      
+      <!-- Arrow Controls -->
+      <div style="display: flex; gap: 10px;">
+        <button type="button" onclick="scrollVehicles('left')" class="btn" style="width:44px; height:44px; padding:0; border-radius:50%; border: 1px solid var(--border-color); background:#fff; color:var(--secondary); font-size:1rem; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-chevron-left"></i></button>
+        <button type="button" onclick="scrollVehicles('right')" class="btn" style="width:44px; height:44px; padding:0; border-radius:50%; border: 1px solid var(--border-color); background:#fff; color:var(--secondary); font-size:1rem; box-shadow:var(--shadow-sm);"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    
+    <div id="featured-vehicles-scroll">
+      {{#each popularVehicles}}
+      <div class="vehicle-card featured-vehicle-card">
+        <div class="vehicle-img-wrapper">
+          <span class="vehicle-tag">Most Booked</span>
+          <img class="vehicle-img" src="{{this.image}}" alt="{{this.name}}" onerror="this.src='https://placehold.co/400x300?text={{encodeURIComponent this.name}}'">
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-rating">
+            <i class="fa-solid fa-star"></i> {{this.rating}} <span>({{this.reviews}} reviews)</span>
+          </div>
+          <h3 class="vehicle-name" style="font-size:1.3rem;">{{this.name}}</h3>
+          <div class="vehicle-specs">
+            <div class="spec-item"><i class="fa-solid fa-gauge"></i> {{this.specs.engine}}</div>
+            <div class="spec-item"><i class="fa-solid fa-droplet"></i> {{this.specs.mileage}}</div>
+            <div class="spec-item"><i class="fa-solid fa-gears"></i> {{this.specs.transmission}}</div>
+          </div>
+          <div class="vehicle-price-book">
+            <div class="price-box">
+              <div class="price">₹{{this.pricePerDay}}<span>/day</span></div>
+            </div>
+            <a href="https://app.rydho.com/search?vehicle={{encodeURIComponent this.name}}" class="btn btn-primary" style="padding: 10px 16px; font-size: 0.85rem;">Book Now</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose RYDHO -->
+<section class="section-padding" style="background-color: var(--bg-white);">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="badge">Trust & Safety</span>
+      <h2>Why Choose RYDHO</h2>
+      <p style="color: var(--text-gray); margin-top: 10px;">We are built on safety, speed, and absolute convenience for our customers.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3>Fully Insured Fleet</h3>
+        <p>Ride with peace of mind. Every scooter and bike on RYDHO features third-party liability insurance covering accidents.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+        <h3>100% Digital KYC</h3>
+        <p>Skip the paper queues. Upload your license and Aadhar online and get verified in under 5 minutes.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+        <h3>Zero Security Deposit</h3>
+        <p>No hidden costs or blocked money. Book your favorite bike without locking up your cash assets.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Roadside Help (24/7)</h3>
+        <p>Flat tire or breakdowns? Our network of mobile mechanic units reaches you in less than 30 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="badge">Simple Onboarding</span>
+      <h2>How RYDHO Works</h2>
+      <p style="color: var(--text-gray); margin-top: 10px;">Book and start riding in four simple steps.</p>
+    </div>
+    
+    <div class="features-grid home-steps-grid home-steps-track">
+      <div class="text-center home-step-item">
+        <div class="feature-icon" style="background-color: var(--bg-white); border: 2px solid var(--border-color); font-weight:700; color: var(--secondary);">1</div>
+        <h4 style="margin-top: 16px; margin-bottom: 8px;">1. Search & Select</h4>
+        <p style="font-size: 0.85rem; color: var(--text-gray);">Pick your city, browse scooters/bikes, and select dates.</p>
+      </div>
+      <div class="text-center home-step-item">
+        <div class="feature-icon" style="background-color: var(--bg-white); border: 2px solid var(--border-color); font-weight:700; color: var(--secondary);">2</div>
+        <h4 style="margin-top: 16px; margin-bottom: 8px;">2. Upload DL & KYC</h4>
+        <p style="font-size: 0.85rem; color: var(--text-gray);">Submit your license and verification ID securely in the app.</p>
+      </div>
+      <div class="text-center home-step-item">
+        <div class="feature-icon" style="background-color: var(--bg-white); border: 2px solid var(--border-color); font-weight:700; color: var(--secondary);">3</div>
+        <h4 style="margin-top: 16px; margin-bottom: 8px;">3. Pay Online</h4>
+        <p style="font-size: 0.85rem; color: var(--text-gray);">Secure checkout via UPI, Cards, or Netbanking.</p>
+      </div>
+      <div class="text-center home-step-item">
+        <div class="feature-icon" style="background-color: var(--bg-white); border: 2px solid var(--border-color); font-weight:700; color: var(--secondary);">4</div>
+        <h4 style="margin-top: 16px; margin-bottom: 8px;">4. Instant Handover</h4>
+        <p style="font-size: 0.85rem; color: var(--text-gray);">Pick up the keys and helmet from the host location.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Host Earnings Promo -->
+<section class="section-padding host-earn-section" style="background-color: var(--bg-white);">
+  <div class="container host-earn-container">
+    <div class="host-earn-box">
+      <div class="host-earn-copy">
+        <span class="badge host-earn-badge">List Your Vehicle</span>
+        <h2>Earn Passive Income Sharing Your Scooter or Bike</h2>
+        <p>Got an idle Honda Activa, Royal Enfield, or commuter motorcycle? Turn it into an asset. List it on RYDHO, select your price, and earn up to ₹15,000 monthly with complete tracking security and insured protection.</p>
+        
+        <div class="home-host-badges">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-piggy-bank text-primary"></i> <strong>85% Host Payout</strong>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-shield-halved text-primary"></i> <strong>Damage Insured</strong>
+          </div>
+        </div>
+        
+        <a href="/become-a-host.html" class="btn btn-primary btn-block-mobile">Become a Host Now</a>
+      </div>
+      
+      <div class="calculator-card">
+        <h3 class="calc-title"><i class="fa-solid fa-calculator text-primary"></i> Earnings Calculator</h3>
+        
+        <div class="calc-row">
+          <label>Select Vehicle Model Type</label>
+          <select id="calc-vehicle-type">
+            <option value="scooter">Scooter (Activa, Jupiter)</option>
+            <option value="commuter">Commuter (FZ, Pulsar)</option>
+            <option value="cruiser">Cruiser (Classic 350)</option>
+          </select>
+        </div>
+        
+        <div class="calc-row">
+          <label>Estimated Days Shared per Month</label>
+          <input type="number" id="calc-days" min="1" max="30" value="20">
+        </div>
+        
+        <div class="earnings-display">
+          <span>Your Monthly Earnings (Estimated Share)</span>
+          <div class="amount" id="calc-earnings-amt">₹5,100</div>
+          <span style="font-size: 0.7rem; display:block; margin-top:4px;">*After 15% marketplace commission</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="section-padding home-testimonials-section">
+  <div class="container">
+    <div class="text-center section-intro home-testimonials-intro">
+      <h2 class="home-testimonials-title">What Our Customers Say</h2>
+      <p class="home-testimonials-sub">Real experiences from riders who trust us every day.</p>
+    </div>
+
+    <div class="testimonials-carousel-wrap">
+      <div id="testimonials-scroll" class="testimonials-carousel">
+        {{#each testimonials}}
+        <article class="testimonial-card testimonial-slide">
+          <i class="fa-solid fa-quote-left testimonial-quote-open" aria-hidden="true"></i>
+          <p class="testimonial-text">"{{this.comment}}"</p>
+          <button type="button" class="testimonial-read-more" aria-expanded="false">read more</button>
+          <h4 class="testimonial-name">{{this.name}}</h4>
+          <i class="fa-solid fa-quote-right testimonial-quote-close" aria-hidden="true"></i>
+        </article>
+        {{/each}}
+      </div>
+
+      <div class="testimonials-nav">
+        <button type="button" class="testimonial-nav-btn" onclick="scrollTestimonials('left')" aria-label="Previous review">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="testimonial-nav-btn" onclick="scrollTestimonials('right')" aria-label="Next review">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Accordion -->
+<section class="section-padding" style="background-color: var(--bg-white);">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="badge">Support Center</span>
+      <h2>Frequently Asked Questions</h2>
+      <p style="color: var(--text-gray); margin-top: 10px;">Everything you need to know about booking and listings.</p>
+    </div>
+    
+    <div class="faq-list">
+      {{#each faq}}
+      <div class="faq-item">
+        <button class="faq-question">
+          {{this.question}}
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>{{this.answer}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Exit Intent Conversion Dialog -->
+<div id="exit-intent-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-icon"><i class="fa-solid fa-gift"></i></div>
+    <h3>Wait! Get 15% Off Your First Ride</h3>
+    <p>Don't commute the expensive way. Use this discount code at checkout on your first RYDHO scooter or bike booking!</p>
+    <div class="coupon-box">
+      RYDHO15
+      <span>CLICK TO COPY CODE</span>
+    </div>
+    <a href="https://app.rydho.com/search" class="btn btn-primary" style="width: 100%;">Book Ride Now</a>
+  </div>
+</div>
+
+<!-- Dynamic Area selection hook for forms -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const citySelect = document.getElementById("search-city");
+    const areaSelect = document.getElementById("search-area");
+    
+    // Config cities mapping from server template context
+    const cityAreas = {{{cityAreasJson}}};
+
+    if (citySelect && areaSelect) {
+      citySelect.addEventListener("change", () => {
+        const city = citySelect.value;
+        areaSelect.innerHTML = '<option value="">All Areas</option>';
+        
+        if (city && cityAreas[city]) {
+          cityAreas[city].forEach(area => {
+            const opt = document.createElement("option");
+            opt.value = area.slug;
+            opt.innerText = area.name;
+            areaSelect.appendChild(opt);
+          });
+        }
+
+        // DYNAMIC HERO SLIDER SYNC AS PER PLACE
+        if (city === "pune") {
+          currentHeroSlideIndex = 0; // Pune Slide
+          updateHeroSlider();
+        } else if (city === "mumbai") {
+          currentHeroSlideIndex = 1; // Mumbai Slide
+          updateHeroSlider();
+        } else if (city === "bangalore") {
+          currentHeroSlideIndex = 2; // Bangalore Slide
+          updateHeroSlider();
+        }
+      });
+    }
+  });
+
+  // Hero Slider Animation Logic
+  let currentHeroSlideIndex = 0;
+  const heroSliderEl = document.getElementById("hero-slider");
+  const totalHeroSlides = 7;
+
+  function updateHeroSlider() {
+    if (!heroSliderEl) return;
+    heroSliderEl.style.transform = `translateX(-${currentHeroSlideIndex * 100}%)`;
+    if (currentHeroSlideIndex === 6) {
+      startHeroMoneyRolling();
+    }
+  }
+
+  function nextHeroSlide() {
+    currentHeroSlideIndex = (currentHeroSlideIndex + 1) % totalHeroSlides;
+    updateHeroSlider();
+  }
+
+  function prevHeroSlide() {
+    currentHeroSlideIndex = (currentHeroSlideIndex - 1 + totalHeroSlides) % totalHeroSlides;
+    updateHeroSlider();
+  }
+
+  window.nextHeroSlide = nextHeroSlide;
+  window.prevHeroSlide = prevHeroSlide;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (heroSliderEl) {
+      updateHeroSlider();
+      setInterval(nextHeroSlide, 1000);
+    }
+  });
+
+  // Live money rolling ticker animation
+  let isRolling = false;
+  function startHeroMoneyRolling() {
+    if (isRolling) return;
+    const tickerEl = document.getElementById("hero-rolling-money");
+    if (!tickerEl) return;
+    
+    isRolling = true;
+    let currentVal = 0;
+    const targetVal = 28500;
+    const duration = 2000; // 2 seconds
+    const steps = 50;
+    const stepIncrement = Math.round(targetVal / steps);
+    const stepTime = duration / steps;
+    
+    const timer = setInterval(() => {
+      currentVal += stepIncrement;
+      if (currentVal >= targetVal) {
+        currentVal = targetVal;
+        clearInterval(timer);
+        isRolling = false;
+      }
+      tickerEl.innerText = "₹" + currentVal.toLocaleString("en-IN");
+    }, stepTime);
+  }
+
+  // Horizontal Scroll Controller for vehicles
+  function scrollVehicles(dir) {
+    const el = document.getElementById("featured-vehicles-scroll");
+    if (!el) return;
+    const card = el.querySelector(".featured-vehicle-card");
+    const gap = 24;
+    const scrollAmount = card ? card.offsetWidth + gap : Math.min(window.innerWidth * 0.9, 374);
+    if (dir === 'left') {
+      el.scrollLeft -= scrollAmount;
+    } else {
+      el.scrollLeft += scrollAmount;
+    }
+  }
+
+  function scrollTestimonials(dir) {
+    const el = document.getElementById("testimonials-scroll");
+    if (!el) return;
+    const card = el.querySelector(".testimonial-slide");
+    const gap = 24;
+    const scrollAmount = card ? card.offsetWidth + gap : Math.min(window.innerWidth * 0.85, 340);
+    el.scrollBy({ left: dir === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+  }
+
+  window.scrollTestimonials = scrollTestimonials;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const testimonialsEl = document.getElementById("testimonials-scroll");
+    if (testimonialsEl) {
+      setInterval(() => {
+        const card = testimonialsEl.querySelector(".testimonial-slide");
+        const gap = 24;
+        const scrollAmount = card ? card.offsetWidth + gap : 320;
+        const maxScroll = testimonialsEl.scrollWidth - testimonialsEl.clientWidth;
+        if (maxScroll <= 0) return;
+        if (testimonialsEl.scrollLeft >= maxScroll - 8) {
+          testimonialsEl.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          testimonialsEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, 4000);
+    }
+
+    document.querySelectorAll(".testimonial-read-more").forEach((btn) => {
+      const textEl = btn.previousElementSibling;
+      if (!textEl || textEl.textContent.replace(/\s/g, "").length < 120) {
+        btn.style.display = "none";
+        return;
+      }
+      btn.addEventListener("click", () => {
+        const expanded = textEl.classList.toggle("is-expanded");
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        btn.textContent = expanded ? "read less" : "read more";
+      });
+    });
+  });
+</script>

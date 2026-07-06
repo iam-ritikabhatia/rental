@@ -1,0 +1,30 @@
+{
+  "name": "RYDHO - Premium Two-Wheeler Rentals",
+  "short_name": "RYDHO",
+  "description": "Rent scooters & motorcycles at 0% security deposit with instant digital KYC.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f8f9fb",
+  "theme_color": "#f11287",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icons/logo.png",
+      "sizes": "585x166",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Bikes",
+      "url": "/bike-rental.html",
+      "icons": [{ "src": "/assets/icons/logo.png", "sizes": "585x166" }]
+    },
+    {
+      "name": "Become a Host",
+      "url": "/become-a-host.html",
+      "icons": [{ "src": "/assets/icons/logo.png", "sizes": "585x166" }]
+    }
+  ]
+}

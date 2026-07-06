@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /user/
+Disallow: /editor.html
+
+Sitemap: https://rydho.com/sitemap.xml

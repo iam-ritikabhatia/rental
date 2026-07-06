@@ -1,0 +1,149 @@
+<!-- Blog Header Banner -->
+{{#if authorName}}
+<section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, rgba(241, 18, 135, 0.05) 0%, rgba(17, 17, 17, 0.02) 100%);">
+  <div class="container" style="text-align: center; max-width: 800px;">
+    <div style="display:flex; justify-content:center; margin-bottom:16px;">
+      <img src="{{domain}}/{{authorAvatar}}" alt="{{authorName}}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+    </div>
+    <span class="badge">RYDHO Guest Columnist</span>
+    <h1>Articles by {{authorName}}</h1>
+    <p style="color: var(--text-gray); font-size: 1.1rem; margin-top: 12px;">{{authorBio}}</p>
+  </div>
+</section>
+{{else}}
+<section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, rgba(241, 18, 135, 0.05) 0%, rgba(17, 17, 17, 0.02) 100%);">
+  <div class="container" style="text-align: center; max-width: 800px;">
+    <span class="badge">RYDHO Journal</span>
+    {{#if postTitle}}
+    <span style="font-size:0.8rem; color:var(--primary); font-weight:700; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:8px;">{{postCategory}}</span>
+    <h1>{{postTitle}}</h1>
+    <div style="color: var(--text-gray); font-size: 0.9rem; margin-top: 12px; display: flex; justify-content: center; gap: 16px; align-items:center;">
+      <span>By <a href="{{domain}}/blog/author/{{postAuthorSlug}}.html" style="color:var(--primary); font-weight:600;">{{postAuthor}}</a></span>
+      <span>•</span>
+      <span>Published {{postDate}}</span>
+    </div>
+    {{else}}
+    <h1>Travel Guides & Riding Tips</h1>
+    <p style="color: var(--text-gray); font-size: 1.1rem; margin-top: 12px;">Discover the best roads, traffic survival tricks, and transport budget ledgers from our writing team.</p>
+    {{/if}}
+  </div>
+</section>
+{{/if}}
+
+<!-- Breadcrumbs Bar -->
+<div style="background-color: var(--bg-white); border-bottom: 1px solid var(--border-color); padding: 12px 0;">
+  <div class="container" style="display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-gray); flex-wrap: wrap;">
+    <a href="/index.html" style="color: var(--primary); font-weight: 500;">Home</a>
+    <span>&gt;</span>
+    <a href="/blog/index.html" style="color: var(--primary); font-weight: 500;">Blog</a>
+    <span>&gt;</span>
+    {{#if postTitle}}
+    <span style="color: var(--text-dark); font-weight: 600;">{{postTitle}}</span>
+    {{else}}
+      {{#if authorName}}
+      <span style="color: var(--text-dark); font-weight: 600;">Author: {{authorName}}</span>
+      {{else}}
+      <span style="color: var(--text-dark); font-weight: 600;">All Posts</span>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+
+<!-- Blog Main Layout -->
+<section class="section-padding">
+  <div class="container">
+    
+    {{#if postContent}}
+    <!-- Single Article view -->
+    <div style="display: grid; grid-template-columns: 7fr 3fr; gap: 40px;" class="hero-grid">
+      
+      <!-- Left Column: Content + TOC + FAQs -->
+      <article style="line-height: 1.8; font-size: 1.05rem; color: var(--text-dark);">
+        <div style="height: 380px; background-color:#eaebee; border-radius: var(--radius-md); margin-bottom: 30px; background: url('{{domain}}/{{postImage}}') center/cover;"></div>
+        
+        <!-- Table of Contents Anchor -->
+        {{{postTOC}}}
+
+        <div class="blog-body" style="color: var(--text-gray); margin-bottom: 40px;">
+          {{{postContent}}}
+        </div>
+        
+        <!-- Dynamic FAQs Accordion Section -->
+        {{{postFAQs}}}
+        
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <a href="/blog/index.html" class="btn btn-outline" style="font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+          <a href="https://app.rydho.com/search" class="btn btn-primary" style="font-size:0.85rem;">Book a Two-Wheeler Now</a>
+        </div>
+      </article>
+      
+      <!-- Right Column: Sidebar (Author profile, quick search, categories) -->
+      <aside>
+        <!-- Author Profile Widget -->
+        <div style="background-color: var(--bg-light); border: 1px solid var(--border-color); padding: 24px; border-radius: var(--radius-sm); margin-bottom: 30px; text-align: center;">
+          <img src="{{domain}}/{{postAuthorAvatar}}" alt="{{postAuthor}}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); margin-bottom: 12px;">
+          <h4 style="margin-bottom: 6px; font-weight:700;">{{postAuthor}}</h4>
+          <span style="font-size:0.75rem; color:var(--primary); font-weight:600; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:12px;">RYDHO Contributor</span>
+          <p style="font-size: 0.85rem; color: var(--text-gray); line-height: 1.5; margin-bottom: 16px;">{{postAuthorBio}}</p>
+          <a href="{{domain}}/blog/author/{{postAuthorSlug}}.html" style="font-size:0.85rem; color:var(--primary); font-weight:600; text-decoration:underline;">View all posts by {{postAuthor}}</a>
+        </div>
+
+        <!-- Sticky Quick Booking Callout -->
+        <div style="background-color: var(--primary-glow); border: 1.5px dashed var(--primary); padding: 24px; border-radius: var(--radius-sm); text-align: center; margin-bottom: 30px; position: sticky; top: 110px;">
+          <h4 style="color:var(--secondary); font-weight:700; margin-bottom:8px;">Ready to Ride?</h4>
+          <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 16px;">Bypass traffic bottlenecks in Pune, Goa, and Bangalore. Rent high-mileage scooters starting at ₹199/day!</p>
+          <a href="/index.html" class="btn btn-primary" style="width:100%; font-size:0.85rem; padding:10px 16px;">Search Rentals Now</a>
+        </div>
+      </aside>
+      
+    </div>
+
+    <!-- Related Posts Row -->
+    {{{postRelatedHtml}}}
+    
+    {{else}}
+      {{#if authorName}}
+      <!-- Author Articles View -->
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: 0;">
+        {{#each authorBlogs}}
+        <div class="vehicle-card" style="min-height: auto;">
+          <div style="height: 180px; background-color:#f1f3f6; background: url('{{this.image}}') center/cover;"></div>
+          <div style="padding: 24px;">
+            <span style="font-size:0.75rem; color:var(--primary); font-weight:600;">{{this.date}} • {{this.category}}</span>
+            <h3 style="font-size: 1.2rem; margin-top: 6px; margin-bottom: 12px; line-height: 1.3;">
+              <a href="/blog/{{this.slug}}.html" style="color:var(--secondary);">{{this.title}}</a>
+            </h3>
+            <p style="color: var(--text-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">{{this.summary}}</p>
+            <a href="/blog/{{this.slug}}.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px;">
+              Read Full Article <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <!-- Main Blog Index: Article Grid -->
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: 0;">
+        {{#each blogs}}
+        <div class="vehicle-card" style="min-height: auto;">
+          <div style="height: 180px; background-color:#f1f3f6; background: url('{{this.image}}') center/cover;"></div>
+          <div style="padding: 24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:0.75rem; color:var(--primary); font-weight:600;">{{this.date}}</span>
+              <span style="font-size:0.7rem; background:var(--bg-light); border:1px solid var(--border-color); padding:2px 8px; border-radius:12px; font-weight:600; color:var(--text-gray);">{{this.category}}</span>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-top: 6px; margin-bottom: 12px; line-height: 1.3;">
+              <a href="/blog/{{this.slug}}.html" style="color:var(--secondary);">{{this.title}}</a>
+            </h3>
+            <p style="color: var(--text-gray); font-size: 0.85rem; line-height: 1.5; margin-bottom: 16px;">{{this.summary}}</p>
+            <a href="/blog/{{this.slug}}.html" style="color: var(--primary); font-weight: 600; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 4px;">
+              Read Full Article <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</section>

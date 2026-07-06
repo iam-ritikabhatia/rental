@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+  <link rel="canonical" href="{{canonical}}">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{domain}}/assets/images/rydho_share_banner.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{canonical}}">
+  <meta property="twitter:title" content="{{title}}">
+  <meta property="twitter:description" content="{{description}}">
+  <meta property="twitter:image" content="{{domain}}/assets/images/rydho_share_banner.jpg">
+
+  <!-- Web App & PWA settings -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f11287">
+  <link rel="apple-touch-icon" href="/assets/icons/logo.png">
+  <link rel="icon" href="/assets/icons/logo.png" type="image/png">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Programmatic Schema Markup (AEO & Search) -->
+  <script type="application/ld+json">
+    {{{schema}}}
+  </script>
+</head>
+<body>
+
+  {{{header}}}
+  
+  <main>
+    {{{content}}}
+  </main>
+  
+  {{{footer}}}
+
+  <!-- Scripts -->
+  <script src="/src/js/api.js"></script>
+  <script src="/src/js/main.js"></script>
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('RYDHO SW: Registered successfully', reg.scope))
+          .catch(err => console.warn('RYDHO SW: Registration failed', err));
+      });
+    }
+  </script>
+</body>
+</html>

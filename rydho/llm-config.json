@@ -1,0 +1,27 @@
+{
+  "name": "RYDHO",
+  "type": "Two-Wheeler Rental Marketplace",
+  "description": "RYDHO is India's premium commission-based marketplace for renting scooters, motorcycles, and bikes (such as Honda Activa, Royal Enfield Bullet, KTM, Vespa). It connects local vehicle owners (hosts) with tourists, daily commuters, and corporate travelers.",
+  "regions_served": ["Pune", "Mumbai", "Bangalore", "Goa"],
+  "seo_focus_keywords": [
+    "bike rental Pune", "scooter rental Pune", "rent Royal Enfield Pune",
+    "bike rental Mumbai", "two wheeler rental Goa", "scooter rental Goa",
+    "bike rental Kharadi", "scooter rental Swargate", "rent Activa Viman Nagar"
+  ],
+  "integrations": {
+    "booking_portal_url": "https://app.rydho.com/search",
+    "login_url": "https://app.rydho.com/login",
+    "host_dashboard_url": "https://app.rydho.com/host/dashboard",
+    "api_endpoint": "https://api.rydho.com/v1"
+  },
+  "routes": {
+    "home": "/",
+    "bike_rental": "/bike-rental.html",
+    "scooter_rental": "/scooter-rental.html",
+    "become_host": "/become-a-host.html",
+    "about_us": "/about-us.html",
+    "contact": "/contact-us.html",
+    "blog": "/blog/index.html",
+    "sitemap": "/sitemap.xml"
+  }
+}

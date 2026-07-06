@@ -1,0 +1,982 @@
+{
+  "brand": {
+    "name": "RYDHO",
+    "tagline": "Premium Two-Wheeler Rentals",
+    "primaryColor": "#f11287",
+    "secondaryColor": "#111111",
+    "backgroundColor": "#f8f9fb",
+    "phone": "+91 94232 17227",
+    "email": "support@rydho.com",
+    "whatsapp": "919423217227",
+    "domain": "https://rydho.com",
+    "appUrl": "https://app.rydho.com",
+    "apiUrl": "https://api.rydho.com/v1"
+  },
+  "navigation": {
+    "header": [
+      {
+        "label": "Bike Rental",
+        "url": "/bike-rental.html"
+      },
+      {
+        "label": "Scooter Rental",
+        "url": "/scooter-rental.html"
+      },
+      {
+        "label": "Become a Host",
+        "url": "/become-a-host.html"
+      },
+      {
+        "label": "Partner Program",
+        "url": "/partner-program.html"
+      },
+      {
+        "label": "Blog",
+        "url": "/blog/index.html"
+      },
+      {
+        "label": "About Us",
+        "url": "/about-us.html"
+      }
+    ],
+    "footer": {
+      "company": [
+        {
+          "label": "About Us",
+          "url": "/about-us.html"
+        },
+        {
+          "label": "Contact Us",
+          "url": "/contact-us.html"
+        },
+        {
+          "label": "Support Center",
+          "url": "/support-center.html"
+        },
+        {
+          "label": "Blog",
+          "url": "/blog/index.html"
+        }
+      ],
+      "host": [
+        {
+          "label": "Become a Host",
+          "url": "/become-a-host.html"
+        },
+        {
+          "label": "Partner Program",
+          "url": "/partner-program.html"
+        },
+        {
+          "label": "Vendor Agreement",
+          "url": "/legal/vendor-agreement.html"
+        },
+        {
+          "label": "Marketplace Rules",
+          "url": "/legal/marketplace-rules.html"
+        }
+      ],
+      "legal": [
+        {
+          "label": "Terms & Conditions",
+          "url": "/legal/terms-and-conditions.html"
+        },
+        {
+          "label": "Privacy Policy",
+          "url": "/legal/privacy-policy.html"
+        },
+        {
+          "label": "Refund Policy",
+          "url": "/legal/refund-policy.html"
+        },
+        {
+          "label": "Cancellation Policy",
+          "url": "/legal/cancellation-policy.html"
+        },
+        {
+          "label": "KYC Policy",
+          "url": "/legal/kyc-policy.html"
+        },
+        {
+          "label": "Insurance Policy",
+          "url": "/legal/insurance-policy.html"
+        }
+      ]
+    }
+  },
+  "cities": [
+    {
+      "name": "Pune",
+      "slug": "pune",
+      "image": "assets/images/pune_hero.jpg",
+      "areas": [
+        {
+          "name": "Kothrud",
+          "slug": "kothrud"
+        },
+        {
+          "name": "Baner",
+          "slug": "baner"
+        },
+        {
+          "name": "Pune Airport",
+          "slug": "pune-airport"
+        },
+        {
+          "name": "Pune Railway Station",
+          "slug": "pune-railway-station"
+        },
+        {
+          "name": "FC Road",
+          "slug": "fc-road"
+        },
+        {
+          "name": "Hinjawadi",
+          "slug": "hinjawadi"
+        },
+        {
+          "name": "Kharadi",
+          "slug": "kharadi"
+        },
+        {
+          "name": "Viman Nagar",
+          "slug": "viman-nagar"
+        },
+        {
+          "name": "Swargate",
+          "slug": "swargate"
+        },
+        {
+          "name": "Balewadi",
+          "slug": "balewadi"
+        },
+        {
+          "name": "Shivaji Nagar",
+          "slug": "shivaji-nagar"
+        },
+        {
+          "name": "Bibwewadi",
+          "slug": "bibwewadi"
+        }
+      ]
+    },
+    {
+      "name": "Goa",
+      "slug": "goa",
+      "image": "assets/images/category_cruisers.jpg",
+      "areas": [
+        {
+          "name": "Goa Airport",
+          "slug": "goa-airport"
+        },
+        {
+          "name": "Thivim Railway Station",
+          "slug": "thivim-railway-station"
+        },
+        {
+          "name": "Calangute",
+          "slug": "calangute"
+        },
+        {
+          "name": "Baga",
+          "slug": "baga"
+        },
+        {
+          "name": "Candolim",
+          "slug": "candolim"
+        },
+        {
+          "name": "Anjuna",
+          "slug": "anjuna"
+        },
+        {
+          "name": "Vagator",
+          "slug": "vagator"
+        },
+        {
+          "name": "Palolem",
+          "slug": "palolem"
+        },
+        {
+          "name": "Panjim",
+          "slug": "panjim"
+        }
+      ]
+    },
+    {
+      "name": "Bangalore",
+      "slug": "bangalore",
+      "image": "assets/images/bengaluru_hero.jpg",
+      "areas": [
+        {
+          "name": "Bangalore Airport",
+          "slug": "bangalore-airport"
+        },
+        {
+          "name": "Whitefield",
+          "slug": "whitefield"
+        },
+        {
+          "name": "Electronic City",
+          "slug": "electronic-city"
+        },
+        {
+          "name": "Koramangala",
+          "slug": "koramangala"
+        },
+        {
+          "name": "Indiranagar",
+          "slug": "indiranagar"
+        },
+        {
+          "name": "HSR Layout",
+          "slug": "hsr-layout"
+        },
+        {
+          "name": "Marathahalli",
+          "slug": "marathahalli"
+        }
+      ]
+    },
+    {
+      "name": "Mumbai",
+      "slug": "mumbai",
+      "image": "assets/images/mumbai_hero.jpg",
+      "areas": [
+        {
+          "name": "Mumbai Airport",
+          "slug": "mumbai-airport"
+        },
+        {
+          "name": "Andheri",
+          "slug": "andheri"
+        },
+        {
+          "name": "Bandra",
+          "slug": "bandra"
+        },
+        {
+          "name": "Borivali",
+          "slug": "borivali"
+        },
+        {
+          "name": "Dadar",
+          "slug": "dadar"
+        },
+        {
+          "name": "Kurla",
+          "slug": "kurla"
+        },
+        {
+          "name": "Colaba",
+          "slug": "colaba"
+        }
+      ]
+    },
+    {
+      "name": "Delhi",
+      "slug": "delhi",
+      "image": "assets/images/category_commuters.jpg",
+      "areas": [
+        {
+          "name": "Delhi Airport",
+          "slug": "delhi-airport"
+        },
+        {
+          "name": "New Delhi Railway Station",
+          "slug": "new-delhi-railway-station"
+        },
+        {
+          "name": "Connaught Place",
+          "slug": "connaught-place"
+        },
+        {
+          "name": "Karol Bagh",
+          "slug": "karol-bagh"
+        },
+        {
+          "name": "Noida",
+          "slug": "noida"
+        },
+        {
+          "name": "Gurugram",
+          "slug": "gurugram"
+        }
+      ]
+    },
+    {
+      "name": "Hyderabad",
+      "slug": "hyderabad",
+      "image": "assets/images/handover_helmet.jpg",
+      "areas": [
+        {
+          "name": "Hyderabad Airport",
+          "slug": "hyderabad-airport"
+        },
+        {
+          "name": "Hitech City",
+          "slug": "hitech-city"
+        },
+        {
+          "name": "Gachibowli",
+          "slug": "gachibowli"
+        },
+        {
+          "name": "Secunderabad",
+          "slug": "secunderabad"
+        }
+      ]
+    },
+    {
+      "name": "Manali",
+      "slug": "manali",
+      "image": "assets/images/manali_hero.jpg",
+      "areas": [
+        {
+          "name": "Mall Road",
+          "slug": "mall-road"
+        },
+        {
+          "name": "Old Manali",
+          "slug": "old-manali"
+        },
+        {
+          "name": "Vashisht",
+          "slug": "vashisht"
+        }
+      ]
+    },
+    {
+      "name": "Leh",
+      "slug": "leh",
+      "image": "assets/images/leh_hero.jpg",
+      "areas": [
+        {
+          "name": "Leh Airport",
+          "slug": "leh-airport"
+        },
+        {
+          "name": "Leh Market",
+          "slug": "leh-market"
+        },
+        {
+          "name": "Nubra Valley",
+          "slug": "nubra-valley"
+        },
+        {
+          "name": "Pangong Lake",
+          "slug": "pangong-lake"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Scooters",
+      "slug": "scooters",
+      "description": "Easy to ride, automatic scooters perfect for city traffic and short commutes.",
+      "image": "assets/images/category_scooters.jpg"
+    },
+    {
+      "name": "Commuter Motorcycles",
+      "slug": "commuters",
+      "description": "Fuel-efficient, comfortable motorbikes ideal for daily travel.",
+      "image": "assets/images/category_commuters.jpg"
+    },
+    {
+      "name": "Premium & Cruiser Motorcycles",
+      "slug": "cruisers",
+      "description": "Royal Enfields, Himalayans, and sport bikes for long road trips and weekend getaways.",
+      "image": "assets/images/category_cruisers.jpg"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "v1",
+      "name": "Honda Activa 6G",
+      "category": "scooters",
+      "pricePerDay": 299,
+      "specs": {
+        "engine": "110cc",
+        "mileage": "50 kmpl",
+        "transmission": "Automatic"
+      },
+      "image": "assets/images/honda_activa.svg",
+      "popular": true,
+      "rating": 4.8,
+      "reviews": 124
+    },
+    {
+      "id": "v2",
+      "name": "TVS Jupiter 125",
+      "category": "scooters",
+      "pricePerDay": 320,
+      "specs": {
+        "engine": "124cc",
+        "mileage": "48 kmpl",
+        "transmission": "Automatic"
+      },
+      "image": "assets/images/tvs_jupiter.svg",
+      "popular": true,
+      "rating": 4.7,
+      "reviews": 86
+    },
+    {
+      "id": "v3",
+      "name": "Royal Enfield Classic 350",
+      "category": "cruisers",
+      "pricePerDay": 799,
+      "specs": {
+        "engine": "349cc",
+        "mileage": "35 kmpl",
+        "transmission": "5-Speed Manual"
+      },
+      "image": "assets/images/re_classic.svg",
+      "popular": true,
+      "rating": 4.9,
+      "reviews": 242
+    },
+    {
+      "id": "v4",
+      "name": "Royal Enfield Himalayan",
+      "category": "cruisers",
+      "pricePerDay": 999,
+      "specs": {
+        "engine": "411cc",
+        "mileage": "30 kmpl",
+        "transmission": "5-Speed Manual"
+      },
+      "image": "assets/images/re_himalayan.svg",
+      "popular": false,
+      "rating": 4.9,
+      "reviews": 98
+    },
+    {
+      "id": "v5",
+      "name": "Yamaha FZ-S V3",
+      "category": "commuters",
+      "pricePerDay": 499,
+      "specs": {
+        "engine": "149cc",
+        "mileage": "45 kmpl",
+        "transmission": "5-Speed Manual"
+      },
+      "image": "assets/images/yamaha_fzs.svg",
+      "popular": true,
+      "rating": 4.6,
+      "reviews": 115
+    },
+    {
+      "id": "v6",
+      "name": "Vespa ZX 125",
+      "category": "scooters",
+      "pricePerDay": 450,
+      "specs": {
+        "engine": "125cc",
+        "mileage": "42 kmpl",
+        "transmission": "Automatic"
+      },
+      "image": "assets/images/vespa_zx.svg",
+      "popular": false,
+      "rating": 4.7,
+      "reviews": 54
+    }
+  ],
+  "faq": [
+    {
+      "question": "What documents are required to rent a two-wheeler?",
+      "answer": "You need a valid Driving License (DL) for two-wheelers, along with a government-approved address proof (Aadhar Card, Passport, or Voter ID). International travelers require an International Driving Permit (IDP) and a Passport."
+    },
+    {
+      "question": "Is fuel included in the rental price?",
+      "answer": "Fuel is not included in the rental price. We provide the vehicle with a basic level of fuel to reach the nearest fuel station, and you are expected to return it with the same amount of fuel."
+    },
+    {
+      "question": "Is there a security deposit required?",
+      "answer": "At RYDHO, we offer a 0% security deposit on most models for verified profiles. If a security deposit is required for premium models, it is fully refundable within 24 hours of returning the vehicle."
+    },
+    {
+      "question": "How do I become a host on RYDHO?",
+      "answer": "To list your scooter or bike, click on 'Become a Host', input your vehicle details and documents, set your price, and submit for verification. Once approved, customers in your area can book it, and you earn commissions."
+    },
+    {
+      "question": "What is the cancellation policy?",
+      "answer": "Free cancellation is available up to 24 hours before your booking starts. Cancellations made within 24 hours of pickup will incur a nominal cancellation fee as detailed in our cancellation policy."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Rahul Sharma",
+      "location": "Pune",
+      "rating": 5,
+      "comment": "Rented a Royal Enfield Classic 350 for my trip to Lonavala. The bike was in pristine condition, and the pickup process at Kharadi was incredibly smooth. Highly recommended!"
+    },
+    {
+      "name": "Priya Nair",
+      "location": "Mumbai",
+      "rating": 5,
+      "comment": "Renting an Activa in Andheri made my daily commute so easy. Clean helmet, zero deposit, and very polite support team. The PWA app worked flawlessly."
+    },
+    {
+      "name": "Aditya Das",
+      "location": "Bangalore",
+      "rating": 4,
+      "comment": "Excellent marketplace. I listed my spare TVS Jupiter as a host, and it's already earning me ₹6,000 a month with full insurance and tracking security."
+    },
+    {
+      "name": "Narasimha Swamy",
+      "location": "Bangalore",
+      "rating": 5,
+      "comment": "The vehicle was in excellent condition and felt almost new. Pickup was quick, the host was polite, and the whole booking flow on RYDHO was smooth from start to finish."
+    },
+    {
+      "name": "Meera Patel",
+      "location": "Goa",
+      "rating": 5,
+      "comment": "Rented a scooter for our Goa trip. Zero deposit, clean helmet included, and roadside support was just a call away. Would book again without hesitation."
+    },
+    {
+      "name": "Karan Mehta",
+      "location": "Mumbai",
+      "rating": 5,
+      "comment": "Monthly lease option saved me a lot compared to buying. KYC was done in minutes and the bike was ready at my doorstep the same day."
+    },
+    {
+      "name": "Arham Khan",
+      "location": "Hyderabad",
+      "rating": 5,
+      "comment": "Booked a Pulsar for a weekend ride around Hitech City. Transparent pricing, quick document verification, and the bike was exactly as shown in the listing."
+    },
+    {
+      "name": "Ayush Sharma",
+      "location": "Delhi",
+      "rating": 5,
+      "comment": "First time using a peer-to-peer rental app and RYDHO made it effortless. Great selection near Connaught Place and the handover was professional and on time."
+    }
+  ],
+  "hostStories": [
+    {
+      "name": "Aditya Das",
+      "location": "Bangalore",
+      "vehicle": "TVS Jupiter",
+      "earning": "₹6,000/mo",
+      "comment": "Listed my spare scooter and it pays for itself every month. Setup took under 10 minutes."
+    },
+    {
+      "name": "Karan Mehta",
+      "location": "Mumbai",
+      "vehicle": "Honda Activa",
+      "earning": "₹8,200/mo",
+      "comment": "My Activa sits idle on weekdays. RYDHO fills those gaps — payouts hit my account within 2 days."
+    },
+    {
+      "name": "Rahul Verma",
+      "location": "Pune",
+      "vehicle": "Royal Enfield Classic 350",
+      "earning": "₹18,500/mo",
+      "comment": "Weekend cruiser earns more than I expected. GPS tracking gives me peace of mind when it's out."
+    }
+  ],
+  "hostEarnings": {
+    "scooterDailyRate": 300,
+    "scooterMonthlyDays": 20,
+    "scooterCommissionPercent": 15,
+    "bikeDailyRate": 800,
+    "bikeMonthlyDays": 18,
+    "bikeCommissionPercent": 15
+  },
+  "blogs": [
+    {
+      "title": "Scenic Two-Wheeler Getaway Routes from Pune: The Ultimate Weekend Guide",
+      "slug": "weekend-getaway-routes-pune",
+      "summary": "Discover the best weekend road trip destinations around Pune. Detailed route guides, road condition reports, and safety tips for two-wheeler travelers.",
+      "date": "July 02, 2026",
+      "author": "Rahul Sharma",
+      "image": "assets/images/blog1.svg",
+      "content": "<h2>Embracing the Western Ghats: Best Two-Wheeler Trails</h2>\n<p>Conquering Pune's scenic outskirts on a two-wheeler is a favorite weekend activity for IT professionals, college students, and travelers alike. The surrounding Western Ghats come alive with lush greenery and waterfalls, particularly during the monsoon and winter seasons. Exploring these routes on a scooter or motorcycle provides travel freedom, allowing you to stop at scenic viewpoints and bypass highway blocks.</p>\n\n<h3>1. Sinhagad Fort (Distance: 30 km from Pune City)</h3>\n<p>The ride to Sinhagad Fort is a classic Pune ritual. Starting early in the morning (around 5:30 AM) is highly recommended to witness the fort shrouded in heavy mist. The route takes you through Donje Village, leading to a steep ghat climb. The road condition is generally fair, though it has sharp hairpins that require careful throttle control on gearless scooters. \n<strong>Pro Tip:</strong> Enjoy hot pitla-bhakri (local millet flatbread) and tea at the top of the fort after your climb.</p>\n\n<h3>2. Lavasa via Temghar Dam (Distance: 60 km from Pune)</h3>\n<p>For riders seeking smooth, sweeping corners and wide asphalt lanes, the route to Lavasa is unmatched. The road winds past Temghar Dam, offering excellent photo opportunities. While the main town of Lavasa has restricted access, the ghat road itself is a rider's paradise. Watch out for oncoming tourist buses around blind bends.\n<strong>Safety Warning:</strong> Ride at moderate speeds; the ghat loops are deceptive, and gravel patches are common near dam runoffs.</p>\n\n<h3>3. Lonavala via Old Mumbai-Pune Highway (Distance: 65 km)</h3>\n<p>Skip the Express Highway (where two-wheelers are banned) and take the Old Mumbai-Pune Highway (NH 48) instead. This route passes through Dehu Road, Talegaon, and Kamshet (famous for paragliding). The highway is wide and well-paved, but high-speed traffic calls for helmet safety and mirrors.\n<strong>Best Stop:</strong> Stop at Sunny Da Dhaba or grab local chikki (nut brittle) in Lonavala market before returning.</p>",
+      "category": "Travel Guides",
+      "faqs": [
+        {
+          "q": "What is the best time to ride from Pune to Lavasa?",
+          "a": "Early mornings (5:30 AM to 8:00 AM) are best to escape heavy highway traffic and enjoy cool mist near Temghar Dam."
+        },
+        {
+          "q": "Are gearless scooters suitable for the Sinhagad Fort climb?",
+          "a": "Yes, modern 110cc and 125cc scooters can climb, but ensure brake pads are checked before descending the steep hairpins."
+        }
+      ]
+    },
+    {
+      "title": "Scooter Renting vs. Owning in Pune: A Complete Financial Analysis",
+      "slug": "scooter-renting-vs-owning",
+      "summary": "Is buying a scooter better than renting one? We analyze the real costs of ownership (maintenance, insurance, depreciation) vs. flexible monthly rentals.",
+      "date": "July 02, 2026",
+      "author": "Ananya Sen",
+      "image": "assets/images/blog2.svg",
+      "content": "<h2>The Real Financial Equation of Vehicle Ownership</h2>\n<p>For short-term residents, university students, and IT professionals working on contracts, purchasing a brand new scooter in Pune is often a financial liability. The transaction cost goes beyond the showroom price; it includes registration, road tax, mandatory third-party insurance, regular servicing, and immediate depreciation loss (up to 15% as soon as it leaves the showroom). Let's look at the financial math of renting vs. buying over a 12-month period.</p>\n\n<h3>12-Month Ledger Sheet: Owning vs. Renting</h3>\n<table style=\"width:100%; border-collapse: collapse; margin: 20px 0; border: 1px solid var(--border-color);\">\n  <tr style=\"background-color: #eaebee;\">\n    <th style=\"padding:10px; border:1px solid #ccc; text-align:left;\">Expense Category</th>\n    <th style=\"padding:10px; border:1px solid #ccc; text-align:left;\">Buying a New Honda Activa</th>\n    <th style=\"padding:10px; border:1px solid #ccc; text-align:left;\">Renting from RYDHO (Monthly)</th>\n  </tr>\n  <tr>\n    <td style=\"padding:10px; border:1px solid #ccc;\">Initial Downpayment / Purchase Cost</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹88,000 (Full cash or high interest loan)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹0 (0% Security Deposit)</td>\n  </tr>\n  <tr>\n    <td style=\"padding:10px; border:1px solid #ccc;\">First-Year Insurance & RTO Tax</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">Included in purchase (approx ₹7,500 value)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹0 (Fully covered by host)</td>\n  </tr>\n  <tr>\n    <td style=\"padding:10px; border:1px solid #ccc;\">Periodic Maintenance & Servicing</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹3,500 (4 free services + oil change consumables)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹0 (Free servicing included in plan)</td>\n  </tr>\n  <tr>\n    <td style=\"padding:10px; border:1px solid #ccc;\">Depreciation Loss (after 1 year)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹15,000 (Market resale value drops to ~₹73,000)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹0 (Zero asset risk)</td>\n  </tr>\n  <tr style=\"font-weight:bold; background:#fff3f8;\">\n    <td style=\"padding:10px; border:1px solid #ccc;\">Total Effective Outlay</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹31,000+ (Out of pocket expenses + asset loss)</td>\n    <td style=\"padding:10px; border:1px solid #ccc;\">₹5,980/month (Only pay for active use months)</td>\n  </tr>\n</table>\n\n<h3>Additional Ownership Headaches</h3>\n<p>When your contract ends or you migrate to another city, selling a used vehicle involves dealing with low-ball buyers, visiting RTOs for Transfer of Ownership (RC transfer), and managing transfers. Renting a RYDHO vehicle eliminates this friction: pick up a clean, certified scooter on day one, and hand it back on day 30 with zero resale risk.</p>",
+      "category": "Finance & Ownership",
+      "faqs": [
+        {
+          "q": "Is insurance and servicing included in RYDHO rentals?",
+          "a": "Yes, all rentals include 100% third-party insurance, regular maintenance schedules, and oil changes at no extra cost."
+        },
+        {
+          "q": "How much does a personal scooter depreciate in the first year?",
+          "a": "Typically, a brand new scooter loses 15% to 20% of its ex-showroom value the moment it leaves the dealership registry."
+        }
+      ]
+    },
+    {
+      "title": "How to Avoid Hinjewadi IT Park Traffic: The Ultimate Two-Wheeler Commuting Guide",
+      "slug": "hinjewadi-commute-guide",
+      "summary": "Beat peak hour traffic congestion in Pune's IT hub. Tips on alternative lanes, and why renting a scooter saves you hours daily.",
+      "date": "July 02, 2026",
+      "author": "Rohan Mehta",
+      "image": "assets/images/blog3.svg",
+      "content": "<h2>Conquering Hinjewadi Traffic Bottlenecks</h2>\n<p>Hinjewadi is Pune's primary tech corridor, housing major global IT centers. However, peak-hour traffic at Shivaji Chowk and Phase 1/2 junctions can waste up to 2 hours of your daily schedule in cars or buses. Renting a scooter like Honda Activa is the ultimate solution. Two-wheelers easily navigate narrow lanes, bypass car gridlocks, and enjoy free parking hubs across tech parks. Skip high taxi bills and cab surge prices during monsoons by zipping past Hinjewadi bottlenecks on a rented ride.</p>\n\n<h3>Alternative Routes for IT Professionals</h3>\n<p>Using the Wakad-Kaspate Wasti bypass or the Marunji route can cut your commute time by 30%. However, these routes are best traversed on a nimble scooter rather than a four-wheeler. RYDHO hosts offer clean, reliable Activas and Pulsars directly within Wakad and Hinjewadi, making it easy to book, pick up, and commute instantly.</p>\n\n<h3>Rain & Winter Commuting Survival Guide</h3>\n<p>Pune monsoons can bring sudden downpours, leading to waterlogged roads near Bhumkar Chowk. Always keep a quality two-piece raincoat in your scooter's under-seat boot storage. Inspect tyre threads before booking: RYDHO vehicles feature deep treads and verified braking checks to keep you slip-free during Pune monsoons.</p>",
+      "category": "Daily Commuting",
+      "faqs": [
+        {
+          "q": "What is the peak traffic window in Hinjewadi IT Park?",
+          "a": "Morning rush is between 9:00 AM and 11:30 AM, and evening exit gridlock runs from 5:30 PM to 8:30 PM."
+        },
+        {
+          "q": "How does two-wheeler sharing help save time in Wakad?",
+          "a": "Bikes can filter through stationary bumper-to-bumper car lanes, cutting Wakad-Hinjewadi commutes by up to 40 minutes."
+        }
+      ]
+    },
+    {
+      "title": "Rent vs. Auto-rickshaw: Cost Comparison of Daily Travel in Kharadi & Viman Nagar",
+      "slug": "rent-vs-autorickshaw-kharadi",
+      "summary": "Is taking local auto-rickshaws cheaper than renting a scooter? We break down Pune travel costs, booking convenience, and hourly travel freedom.",
+      "date": "July 02, 2026",
+      "author": "Ananya Sen",
+      "image": "assets/images/blog4.svg",
+      "content": "<h2>Cost Breakdown: Renting a Scooter vs. Rideshare Rickshaws</h2>\n<p>Daily travel between student housing in Viman Nagar and IT offices in Kharadi (EON Free Zone) via auto-rickshaws can cost ₹150–₹250 per ride. A RYDHO rental scooter costs only ₹299 per day, which covers unlimited trips, 24-hour availability, and eliminates surge pricing. Here is our direct monthly comparison table showing how renting saves up to ₹3,000 monthly, while providing you absolute independence to travel at midnight or take late office shifts without safety worries.</p>\n\n<h3>Monthly Cost Comparison Table</h3>\n<table style='width:100%; border-collapse: collapse; margin: 20px 0; border: 1px solid var(--border-color);'>\n  <tr style='background-color:#eaebee;'>\n    <th style='padding:10px; border:1px solid #ccc;'>Feature</th>\n    <th style='padding:10px; border:1px solid #ccc;'>Auto-Rickshaws (Daily rides)</th>\n    <th style='padding:10px; border:1px solid #ccc;'>RYDHO Scooter Rental</th>\n  </tr>\n  <tr>\n    <td style='padding:10px; border:1px solid #ccc;'>Daily Cost</td>\n    <td style='padding:10px; border:1px solid #ccc;'>₹300 (Average 2 rides)</td>\n    <td style='padding:10px; border:1px solid #ccc;'>₹299</td>\n  </tr>\n  <tr>\n    <td style='padding:10px; border:1px solid #ccc;'>Monthly Bill</td>\n    <td style='padding:10px; border:1px solid #ccc;'>₹6,600</td>\n    <td style='padding:10px; border:1px solid #ccc;'>₹5,980 (With 10% monthly discount)</td>\n  </tr>\n  <tr>\n    <td style='padding:10px; border:1px solid #ccc;'>Availability</td>\n    <td style='padding:10px; border:1px solid #ccc;'>Subject to booking queues & weather</td>\n    <td style='padding:10px; border:1px solid #ccc;'>24/7 key in your pocket</td>\n  </tr>\n</table>\n\n<h3>Convenience & Commuter Security</h3>\n<p>Beyond numbers, hailing auto-rickshaws during peak hours in Viman Nagar or EON Free Zone involves cancellations, arguments over fare meters, and waiting in the rain. Riding your own RYDHO scooter puts you in control: no dependency, no surge fees, and clean helmets included with every trip.</p>",
+      "category": "Finance & Ownership",
+      "faqs": [
+        {
+          "q": "How expensive is auto-rickshaw commuting daily in Kharadi?",
+          "a": "A round trip between Kharadi and Swargate/Kothrud costs ₹450+ using on-demand apps, compared to ₹199/day RYDHO rentals."
+        },
+        {
+          "q": "Do RYDHO hosts provide extra helmets?",
+          "a": "Yes, you can request an additional sanitized helmet for a pillion rider when confirming your booking details."
+        }
+      ]
+    },
+    {
+      "title": "Bike Rental Near Pune Railway Station: The Ultimate Local Guide",
+      "slug": "bike-rental-near-pune-railway-station",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Priya Rao",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Arriving in Pune and need a quick ride? Learn how to rent a verified bike or scooter near Pune Railway Station with zero security deposit.",
+      "faqs": [
+        {
+          "q": "Can I pick up the rented bike directly outside Pune Railway Station?",
+          "a": "Yes, RYDHO hosts can deliver the vehicle directly to the station parking lot or your nearby hotel."
+        },
+        {
+          "q": "What documents are required to rent a two-wheeler in Pune?",
+          "a": "A valid Driving License (DL) and Aadhar Card/Passport are mandatory for digital KYC verification."
+        }
+      ],
+      "content": "<h2>How to Grab a Scooter or Motorcycle Near Pune Station</h2>\n<p>Whether you are visiting Pune for a business meeting in Kharadi or a weekend getaway to Lonavala, renting a bike near Pune Railway Station is the most cost-effective commute choice. Taxis and auto-rickshaws around the station are infamous for charging inflated tourist fares. By booking a self-drive scooter on RYDHO, you gain direct travel freedom.</p>\n<h3>Where is the Pickup Point?</h3>\n<p>Our hosts cover all major gates, including the main exit near Platform 1 and the rear exit (Jahangir Hospital side). Simply select your pickup times on the search widget, upload your DL, and meet the host directly at the parking lot to collect your vehicle and sanitized helmet.</p>"
+    },
+    {
+      "title": "How to Reach Mahabaleshwar by Bike: Scenic Route Guide & Riding Tips",
+      "slug": "how-to-reach-mahabaleshwar-by-bike",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Rahul Sharma",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Planning a road trip from Pune to Mahabaleshwar? Read our complete riding route guide past Khambatki Ghat and Pasarni Ghat.",
+      "faqs": [
+        {
+          "q": "How is the road condition on the Pasarni Ghat climb?",
+          "a": "The roads are well-paved, but watch out for sharp curves and tourist buses during weekends."
+        },
+        {
+          "q": "Is a 110cc scooter enough for a pillion ride to Mahabaleshwar?",
+          "a": "A 125cc scooter or 150cc motorcycle is recommended for a comfortable climb with a pillion rider."
+        }
+      ],
+      "content": "<h2>Conquering the Strawberry Hills on Two-Wheeler</h2>\n<p>The ride from Pune to Mahabaleshwar is approximately 120 km and takes about 3 hours. It is one of the most popular weekend road trips for motorcyclists. The route follows the wide National Highway 48 before branching off at Surur towards Wai and the scenic Pasarni Ghat.</p>\n<h3>Cruising Pasarni Ghat</h3>\n<p>Pasarni Ghat offers sweeping corners and panoramic views of the Dhom Dam backwaters. Ensure your brakes and tires are in excellent condition. Stop at Wai for local refreshments before embarking on the final winding stretch into Mahabaleshwar market.</p>"
+    },
+    {
+      "title": "One-Day Bike Trip from Pune: Curated Sunday Riding Itineraries",
+      "slug": "one-day-bike-trip-from-pune",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Rahul Sharma",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Escape the city gridlock with these curated one-day two-wheeler riding itineraries from Pune to Panshet Dam and Madhe Ghat.",
+      "faqs": [
+        {
+          "q": "Which is the closest weekend ride from Pune for beginners?",
+          "a": "The ride to Sinhagad Fort or Panshet Dam is excellent for beginners, covering under 40 km one-way."
+        },
+        {
+          "q": "Are petrol pumps available on the Madhe Ghat route?",
+          "a": "Fuel stations are sparse past Pabhe Ghat, so fuel up fully before leaving Pune city outskirts."
+        }
+      ],
+      "content": "<h2>Curated Sunday Escapes Around Pune</h2>\n<p>If you only have one day to spare, Pune's geography offers fantastic getaways in every direction. Skip the long highway runs and head straight into the winding ghat roads that lead to local reservoirs and forts.</p>\n<h3>Panshet Dam Ride</h3>\n<p>Panshet is located 40 km from Pune city. The route passes through Sinhagad Road and Khadakwasla Dam, offering beautiful lakeside views. The roads are narrow but scenic, making it ideal for a relaxed scooter ride with a pillion passenger.</p>"
+    },
+    {
+      "title": "Top Places to Visit Within 100 km of Pune by Motorcycle",
+      "slug": "places-to-visit-within-100-km-of-pune",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Priya Rao",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Explore historical forts, tranquil lakes, and rolling hills located within 100 km of Pune city borders.",
+      "faqs": [
+        {
+          "q": "Is night riding safe on the Pune-Mulshi highway?",
+          "a": "No, Mulshi ghat roads lack streetlights and are prone to fog; plan to return before sunset."
+        },
+        {
+          "q": "What is the entry fee for Lavasa ghat roads?",
+          "a": "Two-wheelers typically pay a nominal toll of ₹50-₹100 at the main security check-gate."
+        }
+      ],
+      "content": "<h2>Exploring Pune's Outer Green Belt</h2>\n<p>Within a 100 km radius, Pune is surrounded by valleys, dams, and historic Peshwa structures. Renting a bike gives you the flexibility to explore offbeat trails that buses and tour operators miss.</p>\n<h3>Mulshi Dam & Ghat</h3>\n<p>Mulshi is around 45 km from Hinjewadi. It is a stunning ride during the monsoon, featuring roadside waterfalls and thick mist cover. Stop by the local dhabas for fresh sweetcorn and hot tea.</p>"
+    },
+    {
+      "title": "Renting a Bike vs Taxi in Goa: A Financial Commuter Cost Comparison",
+      "slug": "renting-a-bike-vs-taxi-in-goa",
+      "category": "Finance & Ownership",
+      "date": "July 03, 2026",
+      "author": "Amit Patel",
+      "image": "assets/images/category_commuters.jpg",
+      "summary": "Taxis in Goa are notoriously expensive. We compare the cost of Goan cabs vs renting a self-drive scooter on RYDHO.",
+      "faqs": [
+        {
+          "q": "Why are cab rates so high in Goa?",
+          "a": "Goa lacks aggregator cabs like Uber and Ola, making local taxi unions charge fixed premium prices."
+        },
+        {
+          "q": "Can tourists rent yellow-plated commercial two-wheelers in Goa?",
+          "a": "Yes, black-on-yellow plates are legally approved for self-drive tourist rentals in Goa."
+        }
+      ],
+      "content": "<h2>Why Renting a Two-Wheeler is Essential in Goa</h2>\n<p>Goa is spread out across North and South districts, and public transport is sparse. Cabs easily charge ₹1,500 to ₹2,500 for a single trip between beaches. In contrast, renting an Activa costs as low as ₹300/day.</p>\n<h3>The Cost Ledger</h3>\n<p>A 3-day taxi budget can easily touch ₹8,000. Renting a scooter on RYDHO for 3 days costs under ₹1,200 including fuel. Plus, a scooter lets you park directly near beach shacks and navigate narrow village lanes easily.</p>"
+    },
+    {
+      "title": "Gateway of India Parking Guide: Finding Safe Spots for Two-Wheelers",
+      "slug": "parking-near-gateway-of-india",
+      "category": "Daily Commuting",
+      "date": "July 03, 2026",
+      "author": "Priya Rao",
+      "image": "assets/images/category_scooters.jpg",
+      "summary": "Don't get your bike towed in South Mumbai! Here is the complete parking guide near Gateway of India and Colaba Causeway.",
+      "faqs": [
+        {
+          "q": "Is street parking safe near Gateway of India?",
+          "a": "Always park only in designated pay-and-park zones run by the BMC to avoid heavy towing fines."
+        },
+        {
+          "q": "Where is the nearest multi-level parking lot in Colaba?",
+          "a": "The BMC multi-level parking lot near Eros Cinema/Churchgate is a short ride away."
+        }
+      ],
+      "content": "<h2>Navigating South Mumbai Parking Rules</h2>\n<p>South Mumbai has strict zero-tolerance zones for illegal parking. Leaving your two-wheeler on Colaba Causeway will lead to towing within minutes. Plan ahead to park in designated BMC zones.</p>\n<h3>Designated Parking Spots</h3>\n<p>The safest two-wheeler parking is the pay-and-park zone near Radio Club (5 mins walk from the Gateway) or the official parking lanes near Taj Mahal Palace Hotel. Keep your receipt handy!</p>"
+    },
+    {
+      "title": "Goa Riding Rules for Tourists: How to Avoid Traffic Fines",
+      "slug": "riding-rules-in-goa",
+      "category": "Daily Commuting",
+      "date": "July 03, 2026",
+      "author": "Amit Patel",
+      "image": "assets/images/category_scooters.jpg",
+      "summary": "Avoid expensive traffic challans. Learn the key traffic regulations, helmet laws, and document rules for riding in Goa.",
+      "faqs": [
+        {
+          "q": "Is helmet mandatory for pillion riders in Goa?",
+          "a": "Yes, helmet wearing is strictly enforced for both riders and pillion passengers on national highways."
+        },
+        {
+          "q": "Do Goa traffic police accept digital documents on DigiLocker?",
+          "a": "Yes, by law, digitised copies of DL, RC, insurance, and PUC on DigiLocker are officially valid."
+        }
+      ],
+      "content": "<h2>Riding Safely and Legally in Goa</h2>\n<p>Goa traffic police regularly conduct checks at major beach junctions (like Calangute, Baga, and Mandrem). Tourists are frequently targeted for simple violations. Knowing the rules keeps your trip stress-free.</p>\n<h3>Essential Checklist</h3>\n<p>Always wear a strapped ISI-marked helmet. Ensure your rental scooter has yellow license plates (commercial category). Private white-plate rentals are illegal and can lead to vehicle seizure.</p>"
+    },
+    {
+      "title": "Petrol Pumps on Leh-Manali Highway: Ultimate Fuel Map & Guide",
+      "slug": "fuel-stations-near-leh-highway",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Rahul Sharma",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Cruising the Himalayas? Here is the exact map of working petrol pumps on the Leh-Manali route to plan your jerrycan fills.",
+      "faqs": [
+        {
+          "q": "What is the longest stretch without a petrol pump on the Leh highway?",
+          "a": "The 365 km stretch between Tandi (near Keylong) and Karu (near Leh) has no fuel stations. Carry spare cans!"
+        },
+        {
+          "q": "Is fuel quality good at high-altitude Leh pumps?",
+          "a": "Yes, government-operated fuel bunks at Karu and Leh provide winter-grade petrol."
+        }
+      ],
+      "content": "<h2>Himalayan Fuel Strategy for Motorcyclists</h2>\n<p>Riding to Leh is the ultimate adventure, but it requires careful logistics. The high-altitude terrain and extreme cold deplete fuel mileage rapidly. Planning your fuel stops is critical for survival.</p>\n<h3>The Tandi Fuel Checkpoint</h3>\n<p>Tandi is the most famous fuel pump on the route. It is the last petrol pump before Leh. Make sure to top up your tank and fill at least two 10-liter jerrycans to cover the crossing over Sarchu and Pang.</p>"
+    },
+    {
+      "title": "Best Breakfast Cafes on the Bangalore to Nandi Hills Ride",
+      "slug": "best-cafes-bangalore-nandi-hills-ride",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Priya Rao",
+      "image": "assets/images/category_scooters.jpg",
+      "summary": "Fuel your Sunday morning cruise. The best breakfast spots, cafes, and tea stalls on the Bangalore-Nandi Hills highway.",
+      "faqs": [
+        {
+          "q": "At what time do Nandi Hills highway cafes open on Sundays?",
+          "a": "Most popular breakfast spots open as early as 5:00 AM to cater to early morning riders."
+        },
+        {
+          "q": "Is parking space available for bikes at Indian Paratha Company?",
+          "a": "Yes, they have a massive designated two-wheeler parking front yard."
+        }
+      ],
+      "content": "<h2>Sunday Morning Rides and Hot Breakfasts</h2>\n<p>The 60 km cruise from Bangalore city to Nandi Hills is a weekly ritual for local riders. The highway is wide and smooth, making it perfect for a morning run. The real treat, however, is the highway breakfast scene.</p>\n<h3>Indian Paratha Company</h3>\n<p>Located on the Devanahalli highway, this is the ultimate biker checkpoint. They serve piping hot stuffed parathas, lassi, and chai in an outdoor rustic setting. It is the perfect place to meet fellow riding groups.</p>"
+    },
+    {
+      "title": "Best Monsoon Rides Near Pune: Top Rainy Road Trip Itineraries",
+      "slug": "best-monsoon-rides-near-pune",
+      "category": "Travel Guides",
+      "date": "July 03, 2026",
+      "author": "Rahul Sharma",
+      "image": "assets/images/category_cruisers.jpg",
+      "summary": "Watch the Western Ghats turn emerald green. Curated rainy day bike trips around Pune with wet-riding safety guidelines.",
+      "faqs": [
+        {
+          "q": "How can I protect my phone and documents during a monsoon ride?",
+          "a": "Always carry double-ziploc bags or invest in a waterproof handlebar phone mount."
+        },
+        {
+          "q": "Which roads are prone to landslides near Pune during heavy rain?",
+          "a": "The Varandha Ghat and Tamhini Ghat sections are highly prone to rockfalls; avoid them during red-alert downpours."
+        }
+      ],
+      "content": "<h2>Chasing Waterfalls on a Two-Wheeler</h2>\n<p>Monsoons in Pune are magical. The surrounding hills turn lush green, and seasonal waterfalls appear at every corner. Winding down Tamhini Ghat or Varandha Ghat on a motorcycle is an unforgettable experience.</p>\n<h3>Tamhini Ghat Route</h3>\n<p>Tamhini Ghat links Pune to the Konkan belt. The road has some rough patches but offers spectacular views of Mulshi Lake backwaters and mountain streams. Ride slowly, keep your hazard lights off unless parked, and wear high-visibility gear.</p>"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Used Bike Resale Value Calculator",
+      "slug": "used-bike-resale-value-calculator",
+      "description": "Estimate market resale price of pre-owned scooters and bikes."
+    },
+    {
+      "name": "Bike Mileage & Fuel cost Calculator",
+      "slug": "bike-mileage-fuel-cost-calculator",
+      "description": "Calculate daily/monthly fuel savings by renting."
+    },
+    {
+      "name": "Traffic Police Challan Advisor",
+      "slug": "traffic-police-challan-consultant",
+      "description": "Consult Motor Vehicle Act penalty fees in India."
+    },
+    {
+      "name": "Battery Replacement Cost Calculator",
+      "slug": "battery-replacement-cost-calculator",
+      "description": "Estimate replacement and service cost of batteries."
+    },
+    {
+      "name": "Tire Replacement Cost Calculator",
+      "slug": "tire-replacement-cost-calculator",
+      "description": "Estimate tubeless tyre replacement rates."
+    },
+    {
+      "name": "Helmet Size Calculator",
+      "slug": "helmet-size-calculator",
+      "description": "Measure head circumference to find the correct helmet fit."
+    },
+    {
+      "name": "Insurance IDV Calculator",
+      "slug": "insurance-idv-calculator",
+      "description": "Estimate Insured Declared Value for insurance coverage."
+    },
+    {
+      "name": "Loan Prepayment Calculator",
+      "slug": "loan-prepayment-calculator",
+      "description": "Calculate EMIs and interest savings on prepaying loans."
+    },
+    {
+      "name": "Riding Cost Per Km Calculator",
+      "slug": "riding-cost-per-km-calculator",
+      "description": "Find per-kilometer cost of petrol, maintenance, and insurance."
+    },
+    {
+      "name": "Electric Charging Cost Calculator",
+      "slug": "electric-charging-cost-calculator",
+      "description": "Calculate commercial or residential EV charging rates."
+    },
+    {
+      "name": "Home Charging Time Calculator",
+      "slug": "home-charging-time-calculator",
+      "description": "Estimate charging hours based on charger kW capacity."
+    },
+    {
+      "name": "Range Estimator for EVs",
+      "slug": "range-estimator-for-evs",
+      "description": "Predict actual driving range based on battery and load."
+    },
+    {
+      "name": "Monthly Commuting Cost Calculator",
+      "slug": "monthly-commuting-cost-calculator",
+      "description": "Compare daily commute costs of autos vs. renting."
+    },
+    {
+      "name": "Bike Affordability Calculator",
+      "slug": "bike-affordability-calculator",
+      "description": "Calculate target vehicle purchase price based on monthly salary."
+    },
+    {
+      "name": "RTO Fee Estimator",
+      "slug": "rto-fee-estimator",
+      "description": "Check standard state RTO fees for ownership transfer."
+    },
+    {
+      "name": "Registration Cost Calculator",
+      "slug": "registration-cost-calculator",
+      "description": "Find new registration and road tax rates in India."
+    },
+    {
+      "name": "PUC Renewal Reminder Calculator",
+      "slug": "puc-renewal-reminder-calculator",
+      "description": "Find PUC expiry limits and renewal guidelines."
+    },
+    {
+      "name": "Carbon Emission Calculator",
+      "slug": "carbon-emission-calculator",
+      "description": "Calculate green carbon footprint offsets of travel."
+    }
+  ],
+  "authors": {
+    "Rahul Sharma": {
+      "name": "Rahul Sharma",
+      "slug": "rahul-sharma",
+      "bio": "Rahul is a motorcycling veteran with 10+ years of experience trailing the Western Ghats, Ladakh highways, and coastal roads.",
+      "avatar": "assets/images/category_cruisers.jpg"
+    },
+    "Amit Patel": {
+      "name": "Amit Patel",
+      "slug": "amit-patel",
+      "bio": "Amit is a personal finance analyst specializing in micro-mobility comparisons, depreciation indexes, and vehicle ownership costs in India.",
+      "avatar": "assets/images/category_commuters.jpg"
+    },
+    "Priya Rao": {
+      "name": "Priya Rao",
+      "slug": "priya-rao",
+      "bio": "Priya is an urban lifestyle editor focused on smart cities, green commutes, and resolving gridlock in India's tech park hubs.",
+      "avatar": "assets/images/category_scooters.jpg"
+    }
+  }
+}

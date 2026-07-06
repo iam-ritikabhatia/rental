@@ -1,0 +1,66 @@
+<!-- Category Header -->
+<section class="hero" style="padding: 60px 0; background: linear-gradient(135deg, rgba(241, 18, 135, 0.05) 0%, rgba(17, 17, 17, 0.02) 100%);">
+  <div class="container" style="text-align: center; max-width: 800px;">
+    <span class="badge">Fleet Class</span>
+    <h1>Rent Premium {{categoryName}}</h1>
+    <p style="color: var(--text-gray); font-size: 1.1rem; margin-top: 12px;">{{categoryDescription}} Enjoy verified two-wheelers, clean helmets, third-party liability insurance, and 0% security deposits.</p>
+  </div>
+</section>
+
+<!-- Category Vehicle Grid -->
+<section class="section-padding">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px;">
+      <div>
+        <span class="badge">Models Available</span>
+        <h2>Explore Our {{categoryName}} Fleet</h2>
+      </div>
+    </div>
+    
+    <div class="grid-3">
+      {{#each categoryVehicles}}
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrapper">
+          <span class="vehicle-tag">Available</span>
+          <img class="vehicle-img" src="{{../domain}}/{{this.image}}" alt="{{this.name}}" onerror="this.src='https://placehold.co/400x300?text={{encodeURIComponent this.name}}'">
+        </div>
+        <div class="vehicle-details">
+          <div class="vehicle-rating">
+            <i class="fa-solid fa-star"></i> {{this.rating}} <span>({{this.reviews} reviews)</span>
+          </div>
+          <h3 class="vehicle-name">{{this.name}}</h3>
+          <div class="vehicle-specs">
+            <div class="spec-item"><i class="fa-solid fa-gauge"></i> {{this.specs.engine}}</div>
+            <div class="spec-item"><i class="fa-solid fa-droplet"></i> {{this.specs.mileage}}</div>
+            <div class="spec-item"><i class="fa-solid fa-gears"></i> {{this.specs.transmission}}</div>
+          </div>
+          <div class="vehicle-price-book">
+            <div class="price-box">
+              <div class="price">₹{{this.pricePerDay}}<span>/day</span></div>
+            </div>
+            <a href="https://app.rydho.com/search?type={{../categorySlug}}&vehicle={{encodeURIComponent this.name}}" class="btn btn-primary" style="padding: 10px 16px; font-size: 0.85rem;">Book Now</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Category specific SEO content -->
+<section class="section-padding" style="background-color: var(--bg-white); border-top: 1px solid var(--border-color);">
+  <div class="container" style="max-width: 800px; line-height: 1.8;">
+    <h2 style="margin-bottom: 24px; text-align:center;">Why Choose {{categoryName}} on RYDHO</h2>
+    <p style="margin-bottom: 16px; color: var(--text-gray);">
+      {{#if_eq categorySlug "scooters"}}
+        Scooters are the absolute best choice for navigating the heavy, bumper-to-bumper traffic in Indian metro cities. With an automatic transmission (no gears), models like the Honda Activa 6G and TVS Jupiter 125 make urban riding effortless. They offer exceptional under-seat storage space for your grocery items or backpacks, high fuel efficiency (up to 50 kmpl), and comfortable upright seating for riders of all ages. Renting a scooter on RYDHO is extremely affordable, starting at just ₹299 per day.
+      {{/if_eq}}
+      {{#if_eq categorySlug "commuters"}}
+        Commuter motorcycles like the Yamaha FZ-S or Bajaj Pulsar offer the perfect balance between daily mileage and engine power. Built with robust suspensions and larger tires, these bikes comfortably handle speed bumps and potholes. They are perfect for college students, office commuters in IT corridors, or travelers who need a reliable, gear-based ride. Enjoy excellent mileage, sporty aesthetics, and durable performance on every ride.
+      {{/if_eq}}
+      {{#if_eq categorySlug "cruisers"}}
+        For long-distance road trips, weekend coastal cruises, and hilly ghat terrains, nothing beats a cruiser. The Royal Enfield Classic 350 and Royal Enfield Himalayan are built for comfort, throttle torque, and safety on open highways. Featuring relaxed footpegs, thick cushioned seats, and high engine capacities (350cc - 411cc), these premium motorcycles turn every travel scene into an adventure. Rent a cruiser starting at ₹799/day and hit the roads of Lonavala, Mahabaleshwar, or the Goa coastal highway.
+      {{/if_eq}}
+    </p>
+  </div>
+</section>

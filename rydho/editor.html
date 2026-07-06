@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RYDHO - Content & SEO Offline Editor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #f11287;
+      --secondary: #111111;
+      --bg: #f8f9fb;
+      --border: #e5e7eb;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: #1e1e24;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 100vh;
+    }
+    aside {
+      background-color: var(--secondary);
+      color: white;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    aside h2 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    .nav-btn {
+      background: none;
+      border: none;
+      color: #a0a0b0;
+      padding: 10px 14px;
+      text-align: left;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      color: white;
+      background-color: rgba(255,255,255,0.08);
+    }
+    .nav-btn.active {
+      background-color: var(--primary);
+    }
+    main {
+      padding: 40px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    .panel {
+      display: none;
+      background-color: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    .panel.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    input, select, textarea {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    button.save {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    button.save:hover {
+      background-color: #d00e72;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <h2>RYDHO CMS</h2>
+    <button class="nav-btn active" onclick="showPanel('brand')"><i class="fa-solid fa-gear"></i> Brand settings</button>
+    <button class="nav-btn" onclick="showPanel('fleet')"><i class="fa-solid fa-motorcycle"></i> Fleet & Pricing</button>
+    <button class="nav-btn" onclick="showPanel('locations')"><i class="fa-solid fa-location-dot"></i> City/Area SEO</button>
+    <button class="nav-btn" onclick="showPanel('faq')"><i class="fa-solid fa-circle-question"></i> FAQs Manager</button>
+    
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <button class="save" style="width: 100%;" onclick="exportData()"><i class="fa-solid fa-file-export"></i> Export data.json</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="header-bar">
+      <h1>Content & SEO Offline Editor</h1>
+      <span style="font-size: 0.85rem; color: #626270; background-color: #eaebee; padding: 6px 12px; border-radius: 50px;">Local Offline Mode</span>
+    </div>
+
+    <!-- Brand panel -->
+    <div id="panel-brand" class="panel active">
+      <h2>General Brand Config</h2>
+      <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="form-group">
+          <label>Brand Name</label>
+          <input type="text" id="brand-name" value="RYDHO">
+        </div>
+        <div class="form-group">
+          <label>Support Phone</label>
+          <input type="text" id="brand-phone" value="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label>Support Email</label>
+          <input type="email" id="brand-email" value="support@rydho.com">
+        </div>
+        <div class="form-group">
+          <label>Java backend API URL</label>
+          <input type="text" id="brand-api" value="https://api.rydho.com/v1">
+        </div>
+      </div>
+      <button class="save" onclick="saveBrand()">Save Settings</button>
+    </div>
+
+    <!-- Fleet panel -->
+    <div id="panel-fleet" class="panel">
+      <h2>Fleet Listings</h2>
+      <div id="fleet-list" style="margin-top:20px; display: flex; flex-direction:column; gap:16px;">
+        <!-- Loaded via JS -->
+      </div>
+      <button class="save" onclick="addVehicle()">+ Add New Vehicle</button>
+    </div>
+
+    <!-- Locations panel -->
+    <div id="panel-locations" class="panel">
+      <h2>City Landing Pages & SEO Keywords</h2>
+      <div id="locations-list" style="margin-top:20px; display: flex; flex-direction:column; gap:20px;">
+        <!-- Loaded via JS -->
+      </div>
+    </div>
+
+    <!-- FAQ panel -->
+    <div id="panel-faq" class="panel">
+      <h2>FAQ Lists</h2>
+      <div id="faq-list" style="margin-top:20px; display: flex; flex-direction:column; gap:16px;">
+        <!-- Loaded via JS -->
+      </div>
+      <button class="save" onclick="addFAQ()">+ Add New FAQ</button>
+    </div>
+  </main>
+
+  <script>
+    let db = {};
+
+    // Load existing data.json
+    async function loadData() {
+      try {
+        const res = await fetch('data.json');
+        db = await res.json();
+        renderBrand();
+        renderFleet();
+        renderLocations();
+        renderFAQs();
+      } catch (e) {
+        console.error("Failed to load local data.json inside editor.", e);
+      }
+    }
+
+    function showPanel(id) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // 1. Render Brand Panel
+    function renderBrand() {
+      document.getElementById('brand-name').value = db.brand.name;
+      document.getElementById('brand-phone').value = db.brand.phone;
+      document.getElementById('brand-email').value = db.brand.email;
+      document.getElementById('brand-api').value = db.brand.apiUrl;
+    }
+
+    function saveBrand() {
+      db.brand.name = document.getElementById('brand-name').value;
+      db.brand.phone = document.getElementById('brand-phone').value;
+      db.brand.email = document.getElementById('brand-email').value;
+      db.brand.apiUrl = document.getElementById('brand-api').value;
+      alert("Brand settings saved locally! Don't forget to export data.json before closing.");
+    }
+
+    // 2. Render Fleet Panel
+    function renderFleet() {
+      const container = document.getElementById('fleet-list');
+      container.innerHTML = "";
+      db.vehicles.forEach((v, index) => {
+        const div = document.createElement('div');
+        div.style.padding = "20px";
+        div.style.border = "1px solid var(--border)";
+        div.style.borderRadius = "8px";
+        div.innerHTML = `
+          <div style="display:grid; grid-template-columns: 2fr 1fr 1fr; gap:16px; margin-bottom:12px;">
+            <div class="form-group"><label>Model Name</label><input type="text" value="${v.name}" onchange="updateVehicle(${index}, 'name', this.value)"></div>
+            <div class="form-group"><label>Price / Day</label><input type="number" value="${v.pricePerDay}" onchange="updateVehicle(${index}, 'pricePerDay', this.value)"></div>
+            <div class="form-group"><label>Engine CC</label><input type="text" value="${v.specs.engine}" onchange="updateVehicleSpecs(${index}, 'engine', this.value)"></div>
+          </div>
+          <button class="save" style="background-color:#eaebee; color:#1e1e24;" onclick="deleteVehicle(${index})">Delete</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function updateVehicle(index, key, val) {
+      db.vehicles[index][key] = val;
+    }
+    function updateVehicleSpecs(index, key, val) {
+      db.vehicles[index].specs[key] = val;
+    }
+    function deleteVehicle(index) {
+      db.vehicles.splice(index, 1);
+      renderFleet();
+    }
+    function addVehicle() {
+      db.vehicles.push({
+        id: "v" + (db.vehicles.length + 1),
+        name: "New Scooter Model",
+        category: "scooters",
+        pricePerDay: 290,
+        specs: { engine: "110cc", mileage: "50 kmpl", transmission: "Automatic" },
+        image: "assets/images/honda_activa.jpg",
+        popular: false,
+        rating: 4.8,
+        reviews: 0
+      });
+      renderFleet();
+    }
+
+    // 3. Render Locations Panel
+    function renderLocations() {
+      const container = document.getElementById('locations-list');
+      container.innerHTML = "";
+      db.cities.forEach((c, index) => {
+        const div = document.createElement('div');
+        div.style.padding = "24px";
+        div.style.backgroundColor = "#f8f9fb";
+        div.style.borderRadius = "8px";
+        div.innerHTML = `
+          <h3>City: ${c.name}</h3>
+          <div class="form-group"><label>SEO Page Title</label><input type="text" style="width:100%;" value="${c.metaTitle}" onchange="updateCity(${index}, 'metaTitle', this.value)"></div>
+          <div class="form-group"><label>Meta Description</label><textarea rows="3" style="width:100%;" onchange="updateCity(${index}, 'metaDescription', this.value)">${c.metaDescription}</textarea></div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function updateCity(index, key, val) {
+      db.cities[index][key] = val;
+    }
+
+    // 4. Render FAQs Panel
+    function renderFAQs() {
+      const container = document.getElementById('faq-list');
+      container.innerHTML = "";
+      db.faq.forEach((f, index) => {
+        const div = document.createElement('div');
+        div.style.padding = "20px";
+        div.style.border = "1px solid var(--border)";
+        div.style.borderRadius = "8px";
+        div.innerHTML = `
+          <div class="form-group"><label>Question</label><input type="text" style="width:100%;" value="${f.question}" onchange="updateFAQ(${index}, 'question', this.value)"></div>
+          <div class="form-group"><label>Answer</label><textarea rows="3" style="width:100%;" onchange="updateFAQ(${index}, 'answer', this.value)">${f.answer}</textarea></div>
+          <button class="save" style="background-color:#eaebee; color:#1e1e24;" onclick="deleteFAQ(${index})">Delete</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function updateFAQ(index, key, val) {
+      db.faq[index][key] = val;
+    }
+    function deleteFAQ(index) {
+      db.faq.splice(index, 1);
+      renderFAQs();
+    }
+    function addFAQ() {
+      db.faq.push({
+        question: "New FAQ Question?",
+        answer: "Write detailed answer details here."
+      });
+      renderFAQs();
+    }
+
+    // Export Updated JSON
+    function exportData() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(db, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "data.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    document.addEventListener("DOMContentLoaded", loadData);
+  </script>
+</body>
+</html>

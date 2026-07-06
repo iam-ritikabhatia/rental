@@ -1,0 +1,14 @@
+{
+  "name": "rydho-marketing",
+  "version": "1.0.0",
+  "description": "RYDHO Marketing & SEO Website Engine",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npx browser-sync start --server --files '*.html, src/css/*.css, src/js/*.js, cities/**/*.html, legal/**/*.html, user/**/*.html'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}
